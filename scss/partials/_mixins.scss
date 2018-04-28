@@ -1,0 +1,49 @@
+/**
+ * Sass Mixins
+ *
+ * Just the Tip Band Theme
+ * https://www.justthetipband.com
+ *
+ * @author 	Christopher Tino
+ * @license	Copyright (c) 2018 Just the Tip Band
+ */
+
+@mixin circle_links($val, $backgroundColor){
+	background-color: $backgroundColor;
+	border-radius: $val;
+	box-shadow: 0 1px 1px 0 rgba(0,0,0,0.5);
+	display: block;
+	color: #fff;
+	height: $val;
+	line-height: $val;
+	margin: 0 auto;
+	text-align: center;
+	vertical-align: middle;
+	width: $val;
+	i.fa {
+		line-height: $val;
+	}
+	&:hover {
+		background: scale-color($backgroundColor, $lightness: -15%);
+		color: $white;
+	}
+}
+
+@mixin input_placeholder {
+	textarea::-webkit-input-placeholder,
+	input::-webkit-input-placeholder {
+		@content;
+	}
+	textarea:-moz-placeholder,
+	input:-moz-placeholder { /* Firefox 18- */
+		@content;
+	}
+	textarea::-moz-placeholder,
+	input::-moz-placeholder {  /* Firefox 19+ */
+		@content;
+	}
+	textarea:-ms-input-placeholder,
+	input:-ms-input-placeholder {
+		@content;
+	}
+}

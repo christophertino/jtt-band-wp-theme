@@ -1,0 +1,163 @@
+/**
+ * Main Sass File
+ *
+ * Just the Tip Band Theme
+ * https://www.justthetipband.com
+ *
+ * @author 	Christopher Tino
+ * @license	Copyright (c) 2018 Just the Tip Band
+ */
+
+/* IMPORTS */
+@import "settings";
+@import "./partials/mixins";
+@import "./partials/fonts";
+@import "./partials/pages";
+@import "./partials/contact_form";
+@import "./partials/owl_carousel";
+@import "./partials/wp_core";
+
+/* FOUNDATION OVERRIDES */
+*:focus {outline: none;}
+.button, button {
+	&.large {
+		padding-top: rem-calc(8);
+		padding-bottom: rem-calc(8);
+	}
+}
+a {transition: all .5s ease;}
+
+/* WRAPPERS */
+body {background-color: $dark-gray;}
+main {
+	background-color: $body-background;
+	overflow: hidden;
+}
+
+/* HEADER */
+header {
+	.sticky {
+		background-color: $topbar-background;
+		width: 100%;
+	}
+	.top-bar {
+		//first level menus
+		ul.dropdown.menu > li {
+			> a {
+				color: $white;
+				font-size: rem-calc(15);
+				font-weight: 700;
+				text-transform: uppercase;
+				&:hover {
+					color: $primary-color;
+				}
+			}
+		}
+		//second level menus
+		ul.first-sub {
+			box-shadow: 0 3px 4px 0 rgba(0,0,0,0.3);
+			padding-top: rem-calc(15);
+			padding-bottom: rem-calc(25);
+			z-index: 2;
+			> li {
+				a {
+					color: $secondary-color;
+					font-size: rem-calc(14);
+					text-transform: uppercase;
+					&:hover {color: lighten($secondary-color, 30%);}
+				}
+			}
+		}
+		.top-bar-title, .top-bar-left, .top-bar-right {
+			-ms-flex: none;
+			flex: none;
+		}
+		.top-bar-title {
+			position: absolute;
+			left: 50%;
+			top: 8px;
+			-webkit-transform: translateX(-50%);
+			-moz-transform: translateX(-50%);
+			-o-transform: translateX(-50%);
+			-ms-transform: translateX(-50%);
+			transform: translateX(-50%);
+			.jtt-logo {
+				max-height: 38px;
+				width: auto;
+				path {
+					fill: $white;
+					transition: all .5s ease;
+				}
+			}
+			> a:hover .jtt-logo path {fill:$primary-color;}
+		}
+		.top-bar-left .dropdown > li:first-child > a {padding-left: 0;}
+		.top-bar-right .dropdown > li:last-child > a {padding-right: 0;}
+	}
+	.title-bar {
+		.title-bar-title {
+			position: absolute;
+			left: 50%;
+			top: 8px;
+			-webkit-transform: translateX(-50%);
+			-moz-transform: translateX(-50%);
+			-o-transform: translateX(-50%);
+			-ms-transform: translateX(-50%);
+			transform: translateX(-50%);
+			.jtt-logo {
+				max-height: 24px;
+				width: auto;
+				path {
+					fill: $white;
+				}
+			}
+		}
+	}
+}
+
+/* FOOTER */
+footer {
+	color: $white;
+	font-size: rem-calc(14);
+	padding: rem-calc(20 0 30);
+	.footer-upper {margin-bottom: rem-calc(30);}
+	.footer-lower {
+		text-transform: uppercase;
+		font-size: rem-calc(12);
+	}
+	ul.social-menu {
+		> li {
+			> a {
+				color: $white;
+				font-size: rem-calc(30);
+				padding: rem-calc(0 5);
+				&:hover {color: $primary-color;}
+			}
+			&:first-child a {padding-left: 0;}
+		}
+	}
+	.open-source {
+		i.fa {
+			font-size: rem-calc(30);
+			margin-right: 10px;
+		}
+	}
+}
+
+/* MEDIA QUERIES */
+@include breakpoint(small only) {}
+
+@include breakpoint(medium down) {}
+
+@include breakpoint(medium only) {}
+
+@include breakpoint(medium) {}
+
+@include breakpoint(large) {
+	header .top-bar {
+		max-width: rem-calc(map-get($breakpoints, xlarge));
+		margin: 0 auto;
+		padding-left: rem-calc(map-get($grid-column-gutter, medium)/2);
+		padding-right: rem-calc(map-get($grid-column-gutter, medium)/2);
+	}
+}

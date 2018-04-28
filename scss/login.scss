@@ -1,0 +1,17 @@
+/**
+ * Login Page Sass File
+ *
+ * Just the Tip Band Theme
+ * https://www.justthetipband.com
+ *
+ * @author 	Christopher Tino
+ * @license	Copyright (c) 2018 Just the Tip Band
+ */
+
+h1 a {
+	background-image:url(../images/svg/login-logo.svg) !important;
+}
+body.login h1 a {
+	background-size:auto 250px;
+	width: 100%;
+}

@@ -1,0 +1,37 @@
+/**
+ * Page Template Sass
+ *
+ * Just the Tip Band Theme
+ * https://www.justthetipband.com
+ *
+ * @author 	Christopher Tino
+ * @license	Copyright (c) 2018 Just the Tip Band
+ */
+
+/* GLOBAL MODULES */
+.module {
+	margin-bottom: rem-calc(40);
+	.module-bg-image {
+		background-position: center center;
+		background-repeat: no-repeat;
+		background-size: cover;
+	}
+}
+
+/* HOMEPAGE */
+.home-template {
+	.homepage-hero {
+		.slide {
+			min-height: 600px;
+			h1 {
+				color: $primary-color;
+			}
+			p {
+				font-size: rem-calc(22);
+			}
+			a.button {
+				margin-bottom: 0;
+			}
+		}
+	}
+}

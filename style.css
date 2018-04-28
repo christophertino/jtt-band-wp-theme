@@ -1,0 +1,13 @@
+/*
+ * Theme Name: Just the Tip Band
+ * Theme URI: https://github.com/christophertino/jtt-band-wp-theme
+ * Description: A dynamic and responsive Wordpress theme using Foundation 6
+ * Author: Christopher Tino
+ * Author URI: https://github.com/christophertino
+ * Version: 1.0.0
+ * License: Mozilla Public License, v. 2.0
+ * License URI: http://mozilla.org/MPL/2.0/
+ * Tags: one-column, two-columns, right-sidebar, grid-layout, featured-images, full-width-template, blog, entertainment
+ */
+
+@import url('dist/css/screen.css');
