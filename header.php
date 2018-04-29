@@ -22,10 +22,9 @@
 	<link rel="apple-touch-icon" sizes="180x180" href="<?php bloginfo('template_url'); ?>/images/favicons/apple-touch-icon.png">
 	<link rel="icon" type="image/png" sizes="32x32" href="<?php bloginfo('template_url'); ?>/images/favicons/favicon-32x32.png">
 	<link rel="icon" type="image/png" sizes="16x16" href="<?php bloginfo('template_url'); ?>/images/favicons/favicon-16x16.png">
-	<link rel="manifest" href="<?php bloginfo('template_url'); ?>/images/favicons/manifest.json">
-	<link rel="mask-icon" href="<?php bloginfo('template_url'); ?>/images/favicons/safari-pinned-tab.svg" color="#1f2833">
-	<link rel="shortcut icon" href="<?php bloginfo('template_url'); ?>/images/favicons/favicon.ico">
-	<meta name="msapplication-config" content="<?php bloginfo('template_url'); ?>/images/favicons/browserconfig.xml">
+	<link rel="manifest" href="<?php bloginfo('template_url'); ?>/images/favicons/site.webmanifest">
+	<link rel="mask-icon" href="<?php bloginfo('template_url'); ?>/images/favicons/safari-pinned-tab.svg" color="#f15a29">
+	<meta name="msapplication-TileColor" content="#f15a29">
 	<meta name="theme-color" content="#ffffff">
 
 	<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'template_url' ); ?>/dist/css/foundation.css" />

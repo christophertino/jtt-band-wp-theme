@@ -67,8 +67,10 @@ add_action('wp_head', 'load_js_modules');
 
 /******************** CUSTOM MENUS **************************/
 function register_menus() {
-	register_nav_menu('menu_left',__( 'Header Menu Left' ));
-	register_nav_menu('menu_right',__( 'Header Menu Right' ));
+	register_nav_menu('menu_left', __( 'Header Menu Left' ));
+	register_nav_menu('menu_right', __( 'Header Menu Right' ));
+	register_nav_menu('footer_menu', __( 'Footer Menu' ));
+	register_nav_menu('mobile_menu', __( 'Mobile Menu' ));
 }
 add_action( 'init', 'register_menus' );
 

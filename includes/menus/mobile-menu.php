@@ -15,7 +15,8 @@
 		<span aria-hidden="true">&times;</span>
 	</button>
 	<?php wp_nav_menu(array(
-		'menu' => 'Header Menu Left',
+		'menu' => 'Mobile Menu',
+		'menu_id' => 'mobile-menu',
 		'container' => 'false',
 		'depth' => 1, //no dropdown content
 		'menu_class' => 'no-bullet')

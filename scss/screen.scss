@@ -23,6 +23,9 @@
 *:focus {outline: none;}
 a {transition: all .5s ease;}
 
+/* WRAPPERS */
+main {background-color: $black;}
+
 /* HEADER */
 header {
 	position: absolute;
@@ -120,19 +123,34 @@ header {
 
 /* FOOTER */
 footer {
-	background-color: #2a2a2a;
-	color: $white;
 	font-size: rem-calc(14);
 	padding: rem-calc(20 0 30);
-	.footer-upper {margin-bottom: rem-calc(30);}
-	.footer-lower {
-		text-transform: uppercase;
-		font-size: rem-calc(12);
+	.footer-upper {
+		margin-bottom: rem-calc(30);
+		#footer-menu {
+			li a {
+				color: $white;
+				font-weight: $global-weight-bold;
+				text-transform: uppercase;
+				&:hover {color: $primary-color;}
+			}
+		}
+		.open-source {
+			i.fab {
+				font-size: rem-calc(30);
+				margin-right: 10px;
+			}
+			a {
+				color: $white;
+				&:hover {color: $primary-color;}
+			}
+		}
 	}
-	.open-source {
-		i.fa {
-			font-size: rem-calc(30);
-			margin-right: 10px;
+	.footer-lower {
+		font-size: rem-calc(12);
+		p {
+			margin-bottom: rem-calc(8);
+			&:last-child {margin-bottom: 0;}
 		}
 	}
 }
