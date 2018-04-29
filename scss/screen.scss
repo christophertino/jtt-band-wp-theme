@@ -17,41 +17,49 @@
 @import "./partials/owl_carousel";
 @import "./partials/wp_core";
 
+@import "../node_modules/foundation-sites/scss/components/button";
+
 /* FOUNDATION OVERRIDES */
 *:focus {outline: none;}
-.button, button {
-	&.large {
-		padding-top: rem-calc(8);
-		padding-bottom: rem-calc(8);
-	}
-}
 a {transition: all .5s ease;}
-
-/* WRAPPERS */
-body {background-color: $dark-gray;}
-main {
-	background-color: $body-background;
-	overflow: hidden;
-}
 
 /* HEADER */
 header {
+	position: absolute;
+	top: 0;
+	width: 100%;
+	z-index: 100;
 	.sticky {
-		background-color: $topbar-background;
+		transition: background-color .5s ease;
 		width: 100%;
-	}
-	.top-bar {
-		//first level menus
-		ul.dropdown.menu > li {
-			> a {
-				color: $white;
-				font-size: rem-calc(15);
-				font-weight: 700;
-				text-transform: uppercase;
-				&:hover {
-					color: $primary-color;
+		&.is-stuck {
+			background-color: $topbar-submenu-background;
+			.top-bar {
+				height: 84px;
+				.top-bar-title.title-logo svg {
+					height: 68px;
 				}
 			}
+		}
+	}
+	.top-bar {
+		height: 150px;
+		transition: height .5s ease;
+		ul.menu > li a {
+			color: $secondary-color;
+			font-weight: $global-weight-bold;
+			text-transform: uppercase;
+			&:hover {
+				color: $primary-color;
+				span {
+					border-bottom: 2px solid $primary-color;
+				}
+			}
+		}
+		//first level menus
+		ul.dropdown.menu > li > a {
+			font-size: rem-calc(15);
+			text-shadow: 1px 1px 1px #000;
 		}
 		//second level menus
 		ul.first-sub {
@@ -59,64 +67,60 @@ header {
 			padding-top: rem-calc(15);
 			padding-bottom: rem-calc(25);
 			z-index: 2;
-			> li {
-				a {
-					color: $secondary-color;
-					font-size: rem-calc(14);
-					text-transform: uppercase;
-					&:hover {color: lighten($secondary-color, 30%);}
-				}
+			> li a {
+				font-size: rem-calc(14);
 			}
 		}
 		.top-bar-title, .top-bar-left, .top-bar-right {
 			-ms-flex: none;
 			flex: none;
 		}
-		.top-bar-title {
-			position: absolute;
-			left: 50%;
-			top: 8px;
-			-webkit-transform: translateX(-50%);
-			-moz-transform: translateX(-50%);
-			-o-transform: translateX(-50%);
-			-ms-transform: translateX(-50%);
-			transform: translateX(-50%);
-			.jtt-logo {
-				max-height: 38px;
-				width: auto;
-				path {
-					fill: $white;
-					transition: all .5s ease;
-				}
+		.top-bar-title.title-logo {
+			margin: 0;
+			top: $topbar-padding;
+			svg {
+				height: 134px;
 			}
-			> a:hover .jtt-logo path {fill:$primary-color;}
 		}
 		.top-bar-left .dropdown > li:first-child > a {padding-left: 0;}
-		.top-bar-right .dropdown > li:last-child > a {padding-right: 0;}
+		.top-bar-right {
+			align-items: center;
+			display: flex;
+			ul.social-menu {margin-right: 30px;}
+			li.header-button a { // add `header-button` under CSS Classes in the WP menu admin
+				@include button();
+				margin-bottom: 0;
+				text-shadow: none;
+				&:hover span {border-bottom: none;}
+			}
+		}
 	}
 	.title-bar {
-		.title-bar-title {
-			position: absolute;
-			left: 50%;
-			top: 8px;
-			-webkit-transform: translateX(-50%);
-			-moz-transform: translateX(-50%);
-			-o-transform: translateX(-50%);
-			-ms-transform: translateX(-50%);
-			transform: translateX(-50%);
-			.jtt-logo {
-				max-height: 24px;
-				width: auto;
-				path {
-					fill: $white;
-				}
+		.title-bar-title.title-logo {
+			svg {
+				height: 24px;
 			}
+		}
+	}
+	.title-logo {
+		position: absolute;
+		left: 50%;
+		top: 0;
+		-webkit-transform: translateX(-50%);
+		-moz-transform: translateX(-50%);
+		-o-transform: translateX(-50%);
+		-ms-transform: translateX(-50%);
+		transform: translateX(-50%);
+		svg {
+			transition: height .5s ease;
+			width: auto;
 		}
 	}
 }
 
 /* FOOTER */
 footer {
+	background-color: #2a2a2a;
 	color: $white;
 	font-size: rem-calc(14);
 	padding: rem-calc(20 0 30);
@@ -125,22 +129,24 @@ footer {
 		text-transform: uppercase;
 		font-size: rem-calc(12);
 	}
-	ul.social-menu {
-		> li {
-			> a {
-				color: $white;
-				font-size: rem-calc(30);
-				padding: rem-calc(0 5);
-				&:hover {color: $primary-color;}
-			}
-			&:first-child a {padding-left: 0;}
-		}
-	}
 	.open-source {
 		i.fa {
 			font-size: rem-calc(30);
 			margin-right: 10px;
 		}
+	}
+}
+
+/* MODULES */
+ul.social-menu {
+	> li {
+		> a {
+			color: $white;
+			font-size: rem-calc(25);
+			padding: rem-calc(0 5);
+			&:hover {color: $primary-color;}
+		}
+		&:first-child a {padding-left: 0;}
 	}
 }
 

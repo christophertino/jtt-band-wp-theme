@@ -35,11 +35,11 @@
 </head>
 <body <?php body_class(); ?>>
 	<header>
-		<div class="hide-for-large" data-sticky-container>
-			<div class="title-bar" data-sticky data-options="marginTop:0; stickyOn:small; topAnchor:1">
+		<div class="hide-for-large data-sticky-container">
+			<div class="title-bar" data-sticky data-top-anchor="1" data-sticky-on="small" data-margin-top="0">
 				<div class="title-bar-left">
 					<button class="menu-icon" type="button" data-open="menuModal"></button>
-					<span class="title-bar-title">
+					<span class="title-bar-title title-logo">
 						<a href="<?php echo get_option('siteurl') ?>" title="<?php echo get_option('blogname') ?>" rel="nofollow">
 							<?php get_template_part('images/svg/jtt-logo.svg'); ?>
 						</a>
@@ -48,7 +48,7 @@
 			</div>
 		</div>
 		<div class="show-for-large" data-sticky-container>
-			<div data-sticky data-options="marginTop:0; stickyOn:large; topAnchor:1">
+			<div data-sticky data-top-anchor="1" data-sticky-on="large" data-margin-top="0">
 				<nav class="top-bar">
 					<div class="top-bar-left">
 						<?php $leftMenu = array(
@@ -61,12 +61,13 @@
 						);
 						wp_nav_menu($leftMenu); ?>
 					</div>
-					<div class="top-bar-title">
+					<div class="top-bar-title title-logo">
 						<a href="<?php echo get_option('siteurl') ?>" title="<?php echo get_option('blogname') ?>" rel="nofollow">
 							<?php get_template_part('images/svg/jtt-logo.svg'); ?>
 						</a>
 					</div>
 					<div class="top-bar-right">
+						<?php get_template_part('includes/menus/social-menu'); ?>
 						<?php $rightMenu = array(
 							'container' => 'false',
 							'menu' => 'Header Menu Right',
@@ -80,17 +81,7 @@
 				</nav>
 			</div>
 		</div>
-		<div class="reveal full" id="menuModal" data-reveal data-animation-in="spin-in" data-animation-out="spin-out">
-			<button class="close-button" data-close aria-label="Close modal" type="button">
-				<span aria-hidden="true">&times;</span>
-			</button>
-			<?php wp_nav_menu(array(
-				'menu' => 'Header Menu Left',
-				'container' => 'false',
-				'depth' => 1, //no dropdown content
-				'menu_class' => 'no-bullet')
-			); ?>
-		</div>
+		<?php get_template_part('includes/menus/mobile-menu'); ?>
 	</header>
 	<main>
 	<?php //main ?>

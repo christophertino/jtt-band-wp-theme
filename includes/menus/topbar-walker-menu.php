@@ -73,11 +73,11 @@ class TopBarWalkerMenu extends Walker_Nav_Menu {
 		$title = apply_filters( 'nav_menu_item_title', $title, $item, $args, $depth );
 
 		$item_output = $args->before;
-		$item_output .= '<a'. $attributes .'>';
+		$item_output .= '<a'. $attributes .'><span>';
 		$item_output .= $args->link_before;
 		$item_output .= $title;
 		$item_output .= $args->link_after;
-		$item_output .= '</a>';
+		$item_output .= '</span></a>';
 		$item_output .= $args->after;
 
 		$output .= apply_filters( 'walker_nav_menu_start_el', $item_output, $item, $depth, $args );

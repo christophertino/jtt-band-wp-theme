@@ -52,22 +52,25 @@ $font-path: "../fonts";
 // Font Awesome
 .fa, .fas {
   font-family: 'Font Awesome 5 Free';
+  font-style: normal;
   font-weight: 900;
 }
 .fab {
   font-family: 'Font Awesome 5 Brands';
+  font-style: normal;
 }
 
 // Add Icons Here
+.fa-facebook-square:before {content: "\f082";}
+.fa-instagram:before {content: "\f16d";}
+.fa-twitter:before {content: "\f099";}
+.fa-youtube:before {content: "\f167";}
+.fa-soundcloud:before {content: "\f1be";}
+.fa-github:before {content: "\f09b";}
+
 .fa-search:before {content: "\f002";}
 .fa-angle-right:before {content: "\f105";}
 .fa-angle-left:before {content: "\f104";}
-.fa-facebook-square:before {content: "\f082";}
-.fa-twitter:before {content: "\f099";}
-.fa-soundcloud:before {content: "\f1be";}
-.fa-instagram:before {content: "\f16d";}
-.fa-youtube:before {content: "\f167";}
-.fa-github:before {content: "\f09b";}
 .fa-envelope:before {content: "\f0e0";}
 .fa-play:before {content: "\f04b";}
 

@@ -1,5 +1,5 @@
 /**
- * Application Logic
+ * Webpack Entry Point
  *
  * Just the Tip Band Theme
  * https://www.justthetipband.com
@@ -11,43 +11,9 @@
 import $ from 'jquery';
 import whatInput from 'what-input';
 import Foundation from './foundation';
+import JustTheTip from './justthetip';
 import 'owl.carousel';
 
-//Define our global namespace
-let JustTheTip = JustTheTip || {};
-
-/**
- * Immediately Invoked Function Expression
- * @desc	Pass in JustTheTip namespace as App
- * @desc	Leading semi-colon for minification purposes
- */
-;(function($, window, document, App) {
-
-	App.utilities = {
-
-		buildBindings : function() {
-			//do stuff
-		}
-	};
-
-	App.pages = {
-		homepage: function(){
-			$('.homepage-hero').owlCarousel({
-				items:1,
-				loop:true,
-				nav:false
-			});
-		}
-	};
-
-	App.init = function() {
-
-		$(document).foundation();
-
-		App.utilities.buildBindings();
-
-		//Call other App methods here
-
-	};
-
-})(jQuery, window, document, JustTheTip);
+// expose globals
+window.$ = window.jQuery = $;
+window.JustTheTip = JustTheTip;

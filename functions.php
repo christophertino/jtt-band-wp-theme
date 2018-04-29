@@ -40,24 +40,24 @@ function deregister_native_jquery() {
 add_action('init', 'deregister_native_jquery');
 
 function load_scripts() {
-	wp_register_script('bundle', get_template_directory_uri() . '/dist/bundle.js', false, '1.0.0', true);
+	wp_register_script('bundle', get_template_directory_uri() . '/dist/bundle.js', false, '1.0.0', false);
 
 	if (is_page('Contact') && function_exists('wpcf7_enqueue_scripts')) :
 		wpcf7_enqueue_scripts();
 	endif;
 
-	wp_enqueue_script('app');
+	wp_enqueue_script('bundle');
 }
 add_action('wp_enqueue_scripts', 'load_scripts');
 
 // Load JS Module code here - Will load after enqueued scripts since wp_head hook has lower priority then wp_enqueue_scripts
 function load_js_modules() {
-	$output = '<script type="text/javascript">jQuery(document).ready(function($) {';
+	$output = '<script type="text/javascript">$(function(){';
 
 	$output .= 'JustTheTip.init();';
 
 	if (is_front_page('home')) {
-		$output .= 'JustTheTip.pages.homepage();';
+		$output .= 'JustTheTip.homepage();';
 	}
 
 	$output .= '});</script>';
