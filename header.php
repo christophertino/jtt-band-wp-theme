@@ -37,7 +37,7 @@
 		<div class="hide-for-large data-sticky-container">
 			<div class="title-bar" data-sticky data-top-anchor="1" data-sticky-on="small" data-margin-top="0">
 				<div class="title-bar-left">
-					<button class="menu-icon" type="button" data-open="menuModal"></button>
+					<button class="menu-icon" type="button" data-open="mobile-modal"></button>
 					<span class="title-bar-title title-logo">
 						<a href="<?php echo get_option('siteurl') ?>" title="<?php echo get_option('blogname') ?>" rel="nofollow">
 							<?php get_template_part('images/svg/jtt-logo.svg'); ?>

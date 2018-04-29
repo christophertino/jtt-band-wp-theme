@@ -10,16 +10,21 @@
  */
 ?>
 
-<div class="reveal full" id="menuModal" data-reveal>
+<div class="reveal full" id="mobile-modal" data-reveal>
 	<button class="close-button" data-close aria-label="Close modal" type="button">
 		<span aria-hidden="true">&times;</span>
 	</button>
+	<div class="text-center">
+		<a href="<?php echo get_option('siteurl') ?>" title="<?php echo get_option('blogname') ?>" rel="nofollow">
+			<?php get_template_part('images/svg/jtt-logo.svg'); ?>
+		</a>
+	</div>
 	<?php wp_nav_menu(array(
 		'menu' => 'Mobile Menu',
 		'menu_id' => 'mobile-menu',
 		'container' => 'false',
 		'depth' => 1, //no dropdown content
-		'menu_class' => 'no-bullet')
+		'menu_class' => 'no-bullet text-center')
 	); ?>
 	<?php get_template_part('includes/menus/social-menu'); ?>
 </div>

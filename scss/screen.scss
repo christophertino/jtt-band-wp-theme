@@ -37,6 +37,11 @@ header {
 		width: 100%;
 		&.is-stuck {
 			background-color: $topbar-submenu-background;
+			&.title-bar {
+				.title-bar-title.title-logo svg {
+					height: 24px;
+				}
+			}
 			.top-bar {
 				height: 84px;
 				.top-bar-title.title-logo svg {
@@ -100,15 +105,15 @@ header {
 	}
 	.title-bar {
 		.title-bar-title.title-logo {
+			top: $titlebar-padding;
 			svg {
-				height: 24px;
+				height: 60px;
 			}
 		}
 	}
 	.title-logo {
 		position: absolute;
 		left: 50%;
-		top: 0;
 		-webkit-transform: translateX(-50%);
 		-moz-transform: translateX(-50%);
 		-o-transform: translateX(-50%);
@@ -165,6 +170,27 @@ ul.social-menu {
 			&:hover {color: $primary-color;}
 		}
 		&:first-child a {padding-left: 0;}
+	}
+}
+#mobile-modal {
+	background-color: $black;
+	.close-button {color: $white;}
+	svg {
+		height: 150px;
+		width: auto;
+	}
+	#mobile-menu {
+		margin-top: 30px;
+		li a {
+			color: $white;
+			text-transform: uppercase;
+			font-weight: $global-weight-bold;
+			&:hover {color: $primary-color;}
+		}
+	}
+	.social-menu {
+		justify-content: center;
+		margin-top: 30px;
 	}
 }
 
