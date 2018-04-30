@@ -11,7 +11,7 @@
 ?>
 
 <div class="reveal full" id="mobile-modal" data-reveal>
-	<button class="close-button" data-close aria-label="Close modal" type="button">
+	<button class="close-button" data-close aria-label="Close Modal" type="button">
 		<span aria-hidden="true">&times;</span>
 	</button>
 	<div class="text-center">

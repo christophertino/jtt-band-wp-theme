@@ -251,7 +251,7 @@ add_filter( 'wpcf7_load_css', '__return_false' );
 
 //Add custom wp-login CSS
 function jtt_login_stylesheet() { ?>
-	<link rel="stylesheet" id="custom_wp_admin_css"  href="<?php echo get_bloginfo( 'stylesheet_directory' ) . '/css/login.css'; ?>" type="text/css" media="all" />
+	<link rel="stylesheet" id="custom_wp_admin_css"  href="<?php echo get_bloginfo( 'stylesheet_directory' ) . '/dist/css/login.css'; ?>" type="text/css" media="all" />
 <?php }
 add_action( 'login_enqueue_scripts', 'jtt_login_stylesheet' );
 

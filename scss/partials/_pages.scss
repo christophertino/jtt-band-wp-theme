@@ -22,16 +22,29 @@
 .home-template {
 	.homepage-hero {
 		.slide {
+			align-items: center;
+			display: flex;
 			min-height: 600px;
+			.grid-container {flex-grow: 1;}
 			h1 {
-				color: $primary-color;
+				letter-spacing: -2px;
+				margin-bottom: rem-calc(15);
+				text-shadow: 1px 1px 1px $black;
 			}
 			p {
 				font-size: rem-calc(22);
+				font-weight: $global-weight-bold;
+				text-shadow: 1px 1px 1px $black;
 			}
 			a.button {
-				margin-bottom: 0;
+				margin: rem-calc(30 0 0);
+				text-transform: uppercase;
 			}
 		}
+	}
+	.schedule {
+		.module-bg-image {min-height: 300px;}
+		h2 {color: $primary-color;}
+		.schedule-link {text-transform: uppercase;}
 	}
 }

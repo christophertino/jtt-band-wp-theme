@@ -13,6 +13,7 @@
 @import "./partials/mixins";
 @import "./partials/fonts";
 @import "./partials/pages";
+@import "./partials/gigpress";
 @import "./partials/contact_form";
 @import "./partials/owl_carousel";
 @import "./partials/wp_core";
@@ -22,6 +23,8 @@
 /* FOUNDATION OVERRIDES */
 *:focus {outline: none;}
 a {transition: all .5s ease;}
+.button {font-weight: $global-weight-bold;}
+h1,h2,h3,h4,h5,h6 {text-transform: uppercase;}
 
 /* WRAPPERS */
 main {background-color: $black;}
@@ -160,18 +163,7 @@ footer {
 	}
 }
 
-/* MODULES */
-ul.social-menu {
-	> li {
-		> a {
-			color: $white;
-			font-size: rem-calc(25);
-			padding: rem-calc(0 5);
-			&:hover {color: $primary-color;}
-		}
-		&:first-child a {padding-left: 0;}
-	}
-}
+/* MOBILE MODAL MENU */
 #mobile-modal {
 	background-color: $black;
 	.close-button {color: $white;}
@@ -191,6 +183,19 @@ ul.social-menu {
 	.social-menu {
 		justify-content: center;
 		margin-top: 30px;
+	}
+}
+
+/* MODULES */
+ul.social-menu {
+	> li {
+		> a {
+			color: $white;
+			font-size: rem-calc(25);
+			padding: rem-calc(0 5);
+			&:hover {color: $primary-color;}
+		}
+		&:first-child a {padding-left: 0;}
 	}
 }
 

@@ -1,0 +1,34 @@
+/**
+ * Gigpress Plugin Sass
+ *
+ * Just the Tip Band Theme
+ * https://www.justthetipband.com
+ *
+ * @author 	Christopher Tino
+ * @license	Copyright (c) 2018 Just the Tip Band
+ */
+
+/* GIGPRESS SIDEBAR */
+.gigpress-listing {
+	margin-bottom: rem-calc(30);
+	margin-top: rem-calc(30);
+	p {margin-bottom: 5px;}
+	.gigpress-sidebar-venue {
+		text-transform: uppercase;
+	}
+	.gigpress-sidebar-date, .gigpress-sidebar-city, .gigpress-sidebar-artist {
+		font-weight: $global-weight-bold;
+	}
+	.gigpress-sidebar-status {color: $primary-color;}
+	.button {
+		margin: 15px 0 0;
+		text-transform: uppercase;
+	}
+}
+
+@include breakpoint(large) {
+	.gigpress-listing {
+		margin-bottom: rem-calc(50);
+		margin-top: rem-calc(50);
+	}
+}
