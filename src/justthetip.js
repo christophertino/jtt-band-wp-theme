@@ -15,9 +15,11 @@ class JustTheTip {
 
 	homepage() {
 		$('.homepage-hero').owlCarousel({
-			items:1,
-			loop:true,
-			nav:true,
+			items: 1,
+			autoplay: true,
+			autoplayHoverPause: true,
+			loop: true,
+			nav: false,
 			navText: ['<i class=\"fa fa-angle-left\"></i>', '<i class=\"fa fa-angle-right\"></i>']
 		});
 	}

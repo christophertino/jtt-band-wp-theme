@@ -23,7 +23,10 @@
 /* FOUNDATION OVERRIDES */
 *:focus {outline: none;}
 a {transition: all .5s ease;}
-.button {font-weight: $global-weight-bold;}
+.button {
+	font-weight: $global-weight-bold;
+	text-transform: uppercase;
+}
 h1,h2,h3,h4,h5,h6 {text-transform: uppercase;}
 
 /* WRAPPERS */
@@ -144,12 +147,9 @@ footer {
 			}
 		}
 		.open-source {
-			i.fab {
-				font-size: rem-calc(30);
-				margin-right: 10px;
-			}
 			a {
 				color: $white;
+				i.fab {font-size: rem-calc(30);}
 				&:hover {color: $primary-color;}
 			}
 		}

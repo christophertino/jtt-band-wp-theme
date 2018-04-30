@@ -10,8 +10,6 @@
 
 /* GIGPRESS SIDEBAR */
 .gigpress-listing {
-	margin-bottom: rem-calc(30);
-	margin-top: rem-calc(30);
 	p {margin-bottom: 5px;}
 	.gigpress-sidebar-venue {
 		text-transform: uppercase;
@@ -27,9 +25,4 @@
 }
 
 /* MEDIA QUERIES */
-@include breakpoint(large) {
-	.gigpress-listing {
-		margin-bottom: rem-calc(50);
-		margin-top: rem-calc(50);
-	}
-}
+@include breakpoint(large) {}

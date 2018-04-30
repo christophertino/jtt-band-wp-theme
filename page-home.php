@@ -53,7 +53,7 @@
 
 			<div class="module schedule">
 				<div class="module-bg-image" data-interchange="[<?php bloginfo('template_url'); ?>/images/homepage/home_shows_bg-640x300.jpg, small], [<?php bloginfo('template_url'); ?>/images/homepage/home_shows_bg-1024x400.jpg, medium], [<?php bloginfo('template_url'); ?>/images/homepage/home_shows_bg-1440x400.jpg, large]">
-					<div class="grid-container">
+					<div class="grid-container module-inner">
 						<div class="grid-x">
 							<div class="cell">
 								<h2 class="text-center">Upcoming Shows</h2>
@@ -61,7 +61,7 @@
 									$options = array('scope' => 'upcoming', 'limit' => 4);
 									echo gigpress_sidebar($options);
 								?>
-								<div class="text-center schedule-link">
+								<div class="text-center">
 									<a href="<?php echo get_option('siteurl'); ?>/schedule" class="button large hollow"><i class="fas fa-th-large"></i> See the Full Schedule</a>
 								</div>
 							</div>
@@ -72,10 +72,21 @@
 
 			<div class="module news">
 				<div class="module-bg-image" data-interchange="[<?php bloginfo('template_url'); ?>/images/homepage/home_news_bg-640x300.jpg, small], [<?php bloginfo('template_url'); ?>/images/homepage/home_news_bg-1024x400.jpg, medium], [<?php bloginfo('template_url'); ?>/images/homepage/home_news_bg-1440x400.jpg, large]">
-					<div class="grid-container">
+					<div class="grid-container module-inner">
 						<div class="grid-x">
 							<div class="cell">
 								<h2 class="text-center">What's New</h2>
+								<?php $recent_posts = new WP_Query(array(
+									'post_status' => 'publish',
+									'orderby' => 'date',
+									'posts_per_page' => 3
+								));
+								if ($recent_posts) :
+									include(locate_template('includes/post-listings/featured-post-listing.php'));
+								endif; ?>
+								<div class="text-center">
+									<a href="<?php echo get_option('siteurl'); ?>/blog" class="button large hollow">Read More News</a>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -83,11 +94,13 @@
 			</div>
 
 			<div class="module soundcloud">
-				<div class="grid-container">
+				<div class="grid-container module-inner">
 					<div class="grid-x align-center">
 						<div class="cell medium-9">
 							<h2 class="text-center">Music</h2>
-							<iframe width="100%" height="450" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/42087972&color=%23ff5500&auto_play=false&hide_related=true&show_comments=false&show_user=false&show_reposts=false&show_teaser=false"></iframe>
+							<div class="listing-content">
+								<iframe width="100%" height="450" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/42087972&color=%23ff5500&auto_play=false&hide_related=true&show_comments=false&show_user=false&show_reposts=false&show_teaser=false"></iframe>
+							</div>
 						</div>
 					</div>
 				</div>

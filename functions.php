@@ -11,10 +11,11 @@
 
 /**************** ADD SUPPORT FOR POST THUMBS ***************/
 add_theme_support( 'post-thumbnails' );
-add_image_size( 'hero_xlarge', 1440, 600, true ); //for use on xlarge hero images (homepage)
-add_image_size( 'hero_large', 1440, 400, true ); //for use on large hero images
-add_image_size( 'hero_medium', 1024, 400, true ); //for use on medium hero images
-add_image_size( 'hero_small', 640, 300, true ); //for use on small hero images
+add_image_size( 'hero_xlarge', 1440, 600, true ); // xlarge hero images (homepage)
+add_image_size( 'hero_large', 1440, 400, true ); // large hero images
+add_image_size( 'hero_medium', 1024, 400, true ); // medium hero images
+add_image_size( 'hero_small', 640, 300, true ); // small hero images
+add_image_size( 'featured_image', 760, 540, true ); // homepage featured blog posts
 
 //Show custom image sizes on WP image embed page
 function my_insert_custom_image_sizes( $sizes ) {
@@ -269,7 +270,7 @@ add_filter( 'login_headertitle', 'jtt_login_logo_url_title' );
 // Setup ACF Admin settings area
 if( function_exists('acf_add_options_page') ) {
 	acf_add_options_page(array(
-		'page_title' => 'Global Content',
+		'page_title' => 'Theme Settings',
 		'position'	=> 20,
 		'icon_url' => 'dashicons-tagcloud'
 	));

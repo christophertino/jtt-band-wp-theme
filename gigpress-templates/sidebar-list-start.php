@@ -12,4 +12,4 @@
  */
 ?>
 
-<div class="gigpress-listing grid-x grid-padding-x small-up-2 medium-up-4">
+<div class="gigpress-listing listing-content grid-x grid-padding-x small-up-2 medium-up-4">
