@@ -26,6 +26,7 @@
 	}
 }
 
+/* MEDIA QUERIES */
 @include breakpoint(large) {
 	.gigpress-listing {
 		margin-bottom: rem-calc(50);

@@ -70,7 +70,28 @@
 				</div>
 			</div>
 
-			<iframe width="100%" height="600" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/42087972&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true"></iframe>
+			<div class="module news">
+				<div class="module-bg-image" data-interchange="[<?php bloginfo('template_url'); ?>/images/homepage/home_news_bg-640x300.jpg, small], [<?php bloginfo('template_url'); ?>/images/homepage/home_news_bg-1024x400.jpg, medium], [<?php bloginfo('template_url'); ?>/images/homepage/home_news_bg-1440x400.jpg, large]">
+					<div class="grid-container">
+						<div class="grid-x">
+							<div class="cell">
+								<h2 class="text-center">What's New</h2>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="module soundcloud">
+				<div class="grid-container">
+					<div class="grid-x align-center">
+						<div class="cell medium-9">
+							<h2 class="text-center">Music</h2>
+							<iframe width="100%" height="450" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/42087972&color=%23ff5500&auto_play=false&hide_related=true&show_comments=false&show_user=false&show_reposts=false&show_teaser=false"></iframe>
+						</div>
+					</div>
+				</div>
+			</div>
 
 		<?php endwhile;
 	endif; ?>
