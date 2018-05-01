@@ -59,6 +59,7 @@
 			.content-image {}
 			.content-inner {
 				padding: rem-calc(15 20);
+				position: relative;
 				h6 {
 					text-transform: capitalize;
 					a {
@@ -68,7 +69,13 @@
 				}
 				p {
 					color: $black;
-					&.read-more {margin-bottom: 0;}
+					font-size: rem-calc(14);
+					&.read-more {
+						bottom: 15px;
+						margin-bottom: 0;
+						position: absolute;
+						right: 15px;
+					}
 				}
 			}
 		}

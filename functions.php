@@ -315,10 +315,10 @@ add_filter('wpseo_metabox_prio', function() { return 'low';});
 /******************* CUSTOM FUNCTIONS  **********************/
 //Pull content teaser text
 function the_content_limit($max_char) {
-	$content = get_the_content();
+	$content = get_the_content('');
+	$content = strip_shortcodes( $content );
 	$content = apply_filters('the_content', $content);
-	$content = str_replace(']]>', ']]&gt;', $content);
-	$content = strip_tags($content);
+	$content = wp_strip_all_tags($content);
 
 	if ((strlen($content)>$max_char) && ($space = strpos($content, " ", $max_char ))) {
 		$content = substr($content, 0, $space);

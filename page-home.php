@@ -52,7 +52,12 @@
 			<?php endif; ?>
 
 			<div class="module schedule">
-				<div class="module-bg-image" data-interchange="[<?php bloginfo('template_url'); ?>/images/homepage/home_shows_bg-640x300.jpg, small], [<?php bloginfo('template_url'); ?>/images/homepage/home_shows_bg-1024x400.jpg, medium], [<?php bloginfo('template_url'); ?>/images/homepage/home_shows_bg-1440x400.jpg, large]">
+				<?php $schedule_image = get_field('schedule_background_image');
+				if( !empty($schedule_image) ): ?>
+					<div class="module-bg-image" data-interchange="[<?php echo $schedule_image['sizes']['hero_small']; ?>, small], [<?php echo $schedule_image['sizes']['hero_medium']; ?>, medium], [<?php echo $schedule_image['sizes']['hero_large']; ?>, large]">
+				<?php else : ?>
+					<div class="module-bg-image">
+				<?php endif; ?>
 					<div class="grid-container module-inner">
 						<div class="grid-x">
 							<div class="cell">
@@ -71,7 +76,12 @@
 			</div>
 
 			<div class="module news">
-				<div class="module-bg-image" data-interchange="[<?php bloginfo('template_url'); ?>/images/homepage/home_news_bg-640x300.jpg, small], [<?php bloginfo('template_url'); ?>/images/homepage/home_news_bg-1024x400.jpg, medium], [<?php bloginfo('template_url'); ?>/images/homepage/home_news_bg-1440x400.jpg, large]">
+				<?php $news_image = get_field('news_background_image');
+				if( !empty($news_image) ): ?>
+					<div class="module-bg-image" data-interchange="[<?php echo $news_image['sizes']['hero_small']; ?>, small], [<?php echo $news_image['sizes']['hero_medium']; ?>, medium], [<?php echo $news_image['sizes']['hero_large']; ?>, large]">
+				<?php else : ?>
+					<div class="module-bg-image">
+				<?php endif; ?>
 					<div class="grid-container module-inner">
 						<div class="grid-x">
 							<div class="cell">

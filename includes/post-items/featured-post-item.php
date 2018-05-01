@@ -11,7 +11,7 @@
 ?>
 
 <div class="cell">
-	<div class="featured-post-item" data-equalizer-watch>
+	<div class="featured-post-item">
 		<?php if (has_post_thumbnail()) :
 			$image = wp_get_attachment_image_src(get_post_thumbnail_id(), 'featured_image'); ?>
 			<div class="content-image">
@@ -20,7 +20,7 @@
 				</a>
 			</div>
 		<?php endif; ?>
-		<div class="content-inner">
+		<div class="content-inner" data-equalizer-watch>
 			<h6>
 				<a href="<?php echo get_permalink(); ?>" title="<?php echo get_the_title(); ?>">
 					<?php echo get_the_title(); ?>
