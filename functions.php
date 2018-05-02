@@ -335,7 +335,7 @@ add_filter('wpseo_metabox_prio', function() { return 'low';});
 
 function fetch_instagram() {
 	$access_token = get_field('instagram_access_token', 'option'); //From ACF options page
-	$response = wp_remote_get("https://api.instagram.com/v1/users/self/media/recent/?access_token=" . $access_token);
+	$response = wp_remote_get("https://api.instagram.com/v1/users/self/media/recent/?access_token=" . $access_token . "&count=12");
 
 	if (is_wp_error($response)) {
 		$error_message = $response->get_error_message();

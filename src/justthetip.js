@@ -35,11 +35,14 @@ class JustTheTip {
 				output += '<div class="grid-x small-up-2 medium-up-4 large-up-6">';
 				data.forEach(function(value, index) {
 					output += '<div class="cell">';
-					output += '<img src="' + value.images.standard_resolution.url + '" class="instagram-image" alt="' + value.caption.text + '" title="' + value.caption.text + '">';
+					//anchor tag here with foundation tooltip. background image with cover, zoom on hover
+					output += '<span class="instagram-tooltips" data-tooltip data-alignment="center" tabindex="1" title="' + value.caption.text + '">';
+					output += '<a class="instagram-image" href="' + value.link + '" style="background-image:url(' + value.images.standard_resolution.url + ');" target="_blank"></a>';
+					output += '</span>';
 					output += '</div>';
 				});
 				output += '</div>';
-				$('#instagram-feed').html(output);
+				$('#instagram-feed').html(output).foundation();
 			}
 		}, 'json');
 	}

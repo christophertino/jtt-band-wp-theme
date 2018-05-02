@@ -24,7 +24,7 @@ $ npm install
 ### Building
 ```sh
 # Build all sources
-$ npm run build.dev
+$ npm run build
 ```
 
 ```sh
@@ -34,7 +34,7 @@ $ npm run build.prod
 
 ```sh
 # Build and watch for changes
-$ npm run build.watch
+$ npm run watch
 ```
 
 ## License

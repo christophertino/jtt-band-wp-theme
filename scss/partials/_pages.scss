@@ -83,6 +83,21 @@
 	.soundcloud {
 		background-color: $white;
 	}
+	.instagram {
+		#instagram-feed {margin-bottom: 0;}
+		.instagram-tooltips {display: block;}
+		.instagram-image {
+			background-position: center center;
+			background-repeat: no-repeat;
+			background-size: 100% auto;
+			display: block;
+			height: 275px;
+			transition: background-size .5s ease;
+			&:hover {
+				background-size: 130% auto;
+			}
+		}
+	}
 }
 
 /* MEDIA QUERIES */

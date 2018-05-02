@@ -121,7 +121,7 @@
 					<div class="grid-x">
 						<div class="cell">
 							<h2 class="text-center">Instagram</h2>
-							<div id="instagram-feed"></div>
+							<div id="instagram-feed" class="listing-content"></div>
 						</div>
 					</div>
 				</div>
