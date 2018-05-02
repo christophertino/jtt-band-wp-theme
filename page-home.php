@@ -116,6 +116,23 @@
 				</div>
 			</div>
 
+			<div class="module instagram">
+				<div class="grid-container full module-inner">
+					<div class="grid-x">
+						<div class="cell">
+							<h2 class="text-center">Instagram</h2>
+							<div id="instagram-feed"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="module songlist">
+			</div>
+
+			<div class="module contactus">
+			</div>
+
 		<?php endwhile;
 	endif; ?>
 </section>

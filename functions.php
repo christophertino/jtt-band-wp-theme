@@ -312,6 +312,43 @@ add_filter( 'posts_distinct', 'cf_search_distinct' );
 //lower position priority of Yoast SEO meta box
 add_filter('wpseo_metabox_prio', function() { return 'low';});
 
+/******************* AJAX FUNCTIONS  **********************/
+// INSTAGRAM API ACCESS:
+// Requires an access token for the account
+// 1. Create a new client for this application (https://www.instagram.com/developer/clients/)
+//	+ Get Client ID and Client Secret
+//	+ Set redirect URL (https://YOUR_DOMAIN.com/instagram/token)
+// 2. While still logged in to Instagram, navigate to:
+// 	+ https://api.instagram.com/oauth/authorize/?client_id=CLIENT_ID&redirect_uri=https://REDIRECT_URL&response_type=code
+// 3. Get access code from redirected URL
+// 	+ https://REDIRECT_URL?code=ACCESS_CODE
+// 4. Run curl
+// ```
+//  curl -F 'client_id=CLIENT_ID' \
+// 	-F 'client_secret=CLIENT_SECRET' \
+// 	-F 'grant_type=authorization_code' \
+// 	-F 'redirect_uri=https://REDIRECT_URL' \
+// 	-F 'code=ACCESS_CODE' \
+// 	https://api.instagram.com/oauth/access_token
+// ```
+// 5. Get "access_token" from response. Add to ACF Options page
+
+function fetch_instagram() {
+	$access_token = get_field('instagram_access_token', 'option'); //From ACF options page
+	$response = wp_remote_get("https://api.instagram.com/v1/users/self/media/recent/?access_token=" . $access_token);
+
+	if (is_wp_error($response)) {
+		$error_message = $response->get_error_message();
+		echo json_encode(array("Succeeded" => false, "Message" => $error_message));
+	} else {
+		echo wp_remote_retrieve_body($response);
+	}
+
+	wp_die();
+}
+add_action('wp_ajax_fetch_instagram', 'fetch_instagram');
+add_action('wp_ajax_nopriv_fetch_instagram', 'fetch_instagram');
+
 /******************* CUSTOM FUNCTIONS  **********************/
 //Pull content teaser text
 function the_content_limit($max_char) {
