@@ -26,13 +26,14 @@
 }
 
 /* HOMEPAGE */
-.home-template {
+section.home-template {
 	h2 {color: $primary-color;}
+	a.button i.fas {margin-right: 5px;}
 	.homepage-hero {
 		.slide {
 			align-items: center;
 			display: flex;
-			min-height: 600px;
+			&.module-bg-image {min-height: 600px;}
 			.grid-container {flex-grow: 1;}
 			h1 {
 				letter-spacing: -2px;
@@ -49,12 +50,11 @@
 			}
 		}
 	}
-	.schedule {
+	.schedule, .news, .contact {
 		.module-bg-image {min-height: 300px;}
 	}
 	.news {
-		.module-bg-image {min-height: 300px;}
-		.featured-post-item {
+		.homepage-post-item {
 			background-color: $white;
 			.content-image {}
 			.content-inner {
@@ -81,26 +81,46 @@
 		}
 	}
 	.soundcloud {
-		background-color: $white;
+		background-color: $light-gray;
 	}
 	.instagram {
+		.module-inner {padding-bottom: 0;}
 		#instagram-feed {margin-bottom: 0;}
-		.instagram-tooltips {display: block;}
+		.instagram-tooltips {
+			display: block;
+			overflow: hidden;
+		}
 		.instagram-image {
 			background-position: center center;
 			background-repeat: no-repeat;
-			background-size: 100% auto;
+			background-size: cover;
 			display: block;
 			height: 275px;
-			transition: background-size .5s ease;
+			transition: transform 0.5s;
 			&:hover {
-				background-size: 130% auto;
+				transform: scale(1.3);
 			}
+		}
+	}
+	.songlist {
+		background-color: $light-gray;
+		.artist-columns {
+			color: $black;
+			columns: 2 auto;
+		}
+	}
+	.contact {}
+}
+
+/* MEDIA QUERIES */
+@include breakpoint(medium only) {
+	section.home-template .songlist {
+		.artist-columns {
+			columns: 3 auto;
 		}
 	}
 }
 
-/* MEDIA QUERIES */
 @include breakpoint(large) {
 	.module {
 		.module-inner {
@@ -110,6 +130,11 @@
 		.listing-content {
 			margin-bottom: rem-calc(50);
 			margin-top: rem-calc(50);
+		}
+	}
+	section.home-template .songlist {
+		.artist-columns {
+			columns: 4 auto;
 		}
 	}
 }

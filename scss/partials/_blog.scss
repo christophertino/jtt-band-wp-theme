@@ -1,0 +1,25 @@
+/**
+ * Blog Sass
+ *
+ * Just the Tip Band Theme
+ * https://www.justthetipband.com
+ *
+ * @author 	Christopher Tino
+ * @license	Copyright (c) 2018 Just the Tip Band
+ */
+
+/* BLOG PAGE */
+section.blog-template {
+	.blog-header {
+		.module-bg-image {
+			align-items: center;
+			display: flex;
+			height: 400px;
+		}
+		.grid-container {flex-grow: 1;}
+	}
+}
+
+/* BLOG SINGLE POST */
+
+/* BLOG ARCHIVE PAGE */

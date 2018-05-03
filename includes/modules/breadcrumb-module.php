@@ -12,9 +12,11 @@
 
 <?php if ( function_exists('yoast_breadcrumb') ) : ?>
 	<div class="module breadcrumbs">
-		<div class="row">
-			<div class="small-12 columns">
-				<?php yoast_breadcrumb(); ?>
+		<div class="grid-container">
+			<div class="grid-x">
+				<div class="cell">
+					<?php yoast_breadcrumb(); ?>
+				</div>
 			</div>
 		</div>
 	</div>

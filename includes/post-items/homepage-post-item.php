@@ -1,6 +1,6 @@
 <?php
 /**
- * Featured Post Item
+ * Homepage Post Item
  *
  * Just the Tip Band Theme
  * https://www.justthetipband.com
@@ -11,7 +11,7 @@
 ?>
 
 <div class="cell">
-	<div class="featured-post-item">
+	<div class="homepage-post-item">
 		<?php if (has_post_thumbnail()) :
 			$image = wp_get_attachment_image_src(get_post_thumbnail_id(), 'featured_image'); ?>
 			<div class="content-image">

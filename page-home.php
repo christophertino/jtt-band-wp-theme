@@ -92,10 +92,10 @@
 									'posts_per_page' => 3
 								));
 								if ($recent_posts) :
-									include(locate_template('includes/post-listings/featured-post-listing.php'));
+									include(locate_template('includes/post-listings/homepage-post-listing.php'));
 								endif; ?>
 								<div class="text-center">
-									<a href="<?php echo get_option('siteurl'); ?>/blog" class="button large hollow">Read More News</a>
+									<a href="<?php echo get_option('siteurl'); ?>/blog" class="button large hollow"><i class="fas fa-newspaper"></i> Read More News</a>
 								</div>
 							</div>
 						</div>
@@ -106,7 +106,7 @@
 			<div class="module soundcloud">
 				<div class="grid-container module-inner">
 					<div class="grid-x align-center">
-						<div class="cell medium-9">
+						<div class="cell medium-10 large-9">
 							<h2 class="text-center">Music</h2>
 							<div class="listing-content">
 								<iframe width="100%" height="450" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/42087972&color=%23ff5500&auto_play=false&hide_related=true&show_comments=false&show_user=false&show_reposts=false&show_teaser=false"></iframe>
@@ -128,9 +128,37 @@
 			</div>
 
 			<div class="module songlist">
+				<div class="grid-container module-inner">
+					<div class="grid-x align-center">
+						<div class="cell large-10">
+							<h2 class="text-center">Partial Artist List</h2>
+							<div class="listing-content artist-columns">
+								<?php the_field('artist_list'); ?>
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
 
-			<div class="module contactus">
+			<div class="module contact">
+				<?php $contact_image = get_field('contact_background_image');
+				if( !empty($contact_image) ): ?>
+					<div class="module-bg-image" data-interchange="[<?php echo $contact_image['sizes']['hero_small']; ?>, small], [<?php echo $contact_image['sizes']['hero_medium']; ?>, medium], [<?php echo $contact_image['sizes']['hero_large']; ?>, large]">
+				<?php else : ?>
+					<div class="module-bg-image">
+				<?php endif; ?>
+					<div class="grid-container module-inner">
+						<div class="grid-x align-center">
+							<div class="cell medium-10 large-8 text-center">
+								<h2>Have Questions?</h2>
+								<div class="listing-content">
+									<h4>Drop us an email and tell us all about your event. We love chatting about music and your crazy Aunt who loves Neil Diamond.</h4>
+								</div>
+								<a href="<?php echo get_option('siteurl'); ?>/contact" class="button large hollow"><i class="fas fa-envelope"></i> Contact Us</a>
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
 
 		<?php endwhile;
