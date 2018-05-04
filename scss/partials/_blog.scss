@@ -14,10 +14,47 @@ section.blog-template {
 		.module-bg-image {
 			align-items: center;
 			display: flex;
-			height: 400px;
+			height: 600px;
 		}
 		.grid-container {flex-grow: 1;}
+		h1 {
+			letter-spacing: -2px;
+			margin-bottom: rem-calc(15);
+			text-shadow: 1px 1px 1px $black;
+		}
+		p {
+			font-size: rem-calc(22);
+			font-weight: $global-weight-bold;
+			text-shadow: 1px 1px 1px $black;
+		}
 	}
+	ul.blog-categories {
+		margin-bottom: rem-calc(25);
+		margin-top: rem-calc(25);
+		> li {
+			&.active > a {
+				color: $menu-item-color-active;
+			}
+			> a {
+				font-family: $header-font-family;
+				text-transform: uppercase;
+			}
+		}
+	}
+	.blog-post-item {
+		position: relative;
+		.content-inner {
+			background-color: rgba(0,0,0,0.8);
+			bottom: 0;
+			position: absolute;
+			width: 100%;
+		}
+		h5 {
+			text-transform: none;
+		}
+	}
+	.blog-featured-content {}
+	.blog-posts {}
 }
 
 /* BLOG SINGLE POST */

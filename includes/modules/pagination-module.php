@@ -10,24 +10,25 @@
  */
 ?>
 
-<?php $big = 999999999; // need an unlikely integer
-$pagination = array(
-	'base' => str_replace($big, '%#%', esc_url(get_pagenum_link($big))),
+<?php $args = array(
+	'type' => 'array',
+	'base' => str_replace(999999999, '%#%', esc_url(get_pagenum_link(999999999))),
 	'format' => '?paged=%#%',
 	'current' => max(1, get_query_var('paged')),
 	'total' => $filtered_posts->max_num_pages,
 	'prev_text' => 'Previous',
 	'next_text' => 'Next'
 );
-$buildPagination = paginate_links($pagination);
+$pagination = paginate_links($args);
+
 if (!is_null($buildPagination)) : ?>
-	<div class="module pagination">
+	<div class="module">
 		<div class="grid-container">
 			<div class="grid-x">
 				<div class="cell">
-					<div class="pagination-inner">
-						<?php echo $buildPagination; ?>
-					</div>
+					<ul class="pagination">
+
+					</ul>
 				</div>
 			</div>
 		</div>

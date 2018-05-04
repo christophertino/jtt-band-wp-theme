@@ -11,12 +11,22 @@
 ?>
 
 <div class="grid-container">
-	<?php $paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1;
+	<?php $archive_title = "";
+		$filtered_posts = new WP_Query(array(
+			'post_type' => 'post',
+			'paged' => $paged,
+			'post_status' => 'publish',
+			'orderby' => 'date',
+			'post__not_in' => $excludeIDs, //exclude featured posts
+		));
+	$paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1;
 	if( $filtered_posts->have_posts() ): ?>
-		<div class="grid-x grid-padding-x small-up-2 medium-up-4 large-up-6">
-			<?php while ( $filtered_posts->have_posts()) : $filtered_posts->the_post();
-				get_template_part('includes/post-items/blog-post-item');
-			endwhile; ?>
+		<div class="grid-x grid-margin-x small-up-1 medium-up-2 large-up-3">
+			<?php while ( $filtered_posts->have_posts()) : $filtered_posts->the_post(); ?>
+				<div class="cell">
+					<?php get_template_part('includes/post-items/blog-post-item'); ?>
+				</div>
+			<?php endwhile; ?>
 		</div>
 		<?php wp_reset_postdata();
 	else : ?>

@@ -86,14 +86,7 @@
 						<div class="grid-x">
 							<div class="cell">
 								<h2 class="text-center">What's New</h2>
-								<?php $recent_posts = new WP_Query(array(
-									'post_status' => 'publish',
-									'orderby' => 'date',
-									'posts_per_page' => 3
-								));
-								if ($recent_posts) :
-									include(locate_template('includes/post-listings/homepage-post-listing.php'));
-								endif; ?>
+								<?php include(locate_template('includes/post-listings/homepage-post-listing.php')); ?>
 								<div class="text-center">
 									<a href="<?php echo get_option('siteurl'); ?>/blog" class="button large hollow"><i class="fas fa-newspaper"></i> Read More News</a>
 								</div>

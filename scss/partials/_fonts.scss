@@ -18,6 +18,13 @@ $font-path: "../fonts";
 		url('#{$font-path}/fa-solid-900.woff') format('woff');
 }
 @font-face {
+	font-family: 'Font Awesome 5 Free';
+	font-style: normal;
+	font-weight: 400;
+	src: url('#{$font-path}/fa-regular-400.woff2') format('woff2'),
+		url('#{$font-path}/fa-regular-400.woff') format('woff');
+}
+@font-face {
 	font-family: 'Font Awesome 5 Brands';
 	font-style: normal;
 	font-weight: normal;
@@ -51,17 +58,23 @@ $font-path: "../fonts";
 
 // Font Awesome
 .fa, .fas {
-  font-family: 'Font Awesome 5 Free';
-  font-style: normal;
-  font-weight: 900;
+	font-family: 'Font Awesome 5 Free';
+	font-style: normal;
+	font-weight: 900;
+}
+.far {
+	font-family: 'Font Awesome 5 Free';
+	font-style: normal;
+	font-weight: 400;
 }
 .fab {
-  font-family: 'Font Awesome 5 Brands';
-  font-style: normal;
+	font-family: 'Font Awesome 5 Brands';
+	font-style: normal;
+	font-weight: normal;
 }
 
 // Add Icons Here
-.fa-facebook-square:before {content: "\f082";}
+.fa-facebook-f:before {content: "\f39e";}
 .fa-instagram:before {content: "\f16d";}
 .fa-twitter:before {content: "\f099";}
 .fa-youtube:before {content: "\f167";}
@@ -71,5 +84,5 @@ $font-path: "../fonts";
 .fa-angle-right:before {content: "\f105";}
 .fa-angle-left:before {content: "\f104";}
 .fa-th-large:before {content: "\f009";}
-.fa-envelope:before {content: "\f0e0";}
 .fa-newspaper:before {content: "\f1ea";}
+.fa-clock:before {content: "\f017";}

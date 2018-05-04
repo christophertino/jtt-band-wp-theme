@@ -16,7 +16,6 @@
 
 <?php get_header(); ?>
 <section class="blog-template">
-
 	<div class="module blog-header">
 		<?php $blog_image = get_field('blog_header_image', get_option('page_for_posts'));
 		if( !empty($blog_image) ): ?>
@@ -27,7 +26,7 @@
 			<div class="grid-container">
 				<div class="grid-x">
 					<div class="cell">
-						<h1><?php echo get_the_title(get_option('page_for_posts')); ?></h1>
+						<h1><?php the_title(get_option('page_for_posts')); ?></h1>
 						<?php if (get_field('blog_description', get_option('page_for_posts'))) : ?>
 							<p><?php the_field('blog_description', get_option('page_for_posts')); ?></p>
 						<?php endif; ?>
@@ -47,17 +46,7 @@
 	</div>
 
 	<div class="module blog-posts">
-		<?php $archive_title = "";
-		$filtered_posts = new WP_Query(array(
-			'post_type' => 'post',
-			'paged' => $paged,
-			'post_status' => 'publish',
-			'orderby' => 'date',
-			'post__not_in' => $excludeIDs, //exclude featured posts
-		));
-		if ($filtered_posts) :
-			include(locate_template('includes/post-listings/blog-post-listing.php'));
-		endif; ?>
+		<?php include(locate_template('includes/post-listings/blog-post-listing.php')); ?>
 	</div>
 </section>
 <?php get_footer(); ?>

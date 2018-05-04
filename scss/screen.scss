@@ -23,7 +23,13 @@
 
 /* FOUNDATION OVERRIDES */
 *:focus {outline: none;}
-a {transition: all .5s ease;}
+a {
+	transition: all .5s ease;
+	&.white-link {
+		color: $white;
+		&:hover {color: $primary-color;}
+	}
+}
 .button {
 	font-weight: $global-weight-bold;
 	text-transform: uppercase;
@@ -149,9 +155,7 @@ footer {
 		}
 		.open-source {
 			a {
-				color: $white;
 				i.fab {font-size: rem-calc(30);}
-				&:hover {color: $primary-color;}
 			}
 		}
 	}

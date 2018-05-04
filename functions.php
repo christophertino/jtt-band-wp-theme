@@ -15,7 +15,7 @@ add_image_size( 'hero_xlarge', 1440, 600, true ); // xlarge hero images (homepag
 add_image_size( 'hero_large', 1440, 400, true ); // large hero images
 add_image_size( 'hero_medium', 1024, 400, true ); // medium hero images
 add_image_size( 'hero_small', 640, 300, true ); // small hero images
-add_image_size( 'featured_image', 760, 540, true ); // homepage featured blog posts
+add_image_size( 'blog_thumbnail', 760, 540, true ); // blog post thumbnails
 
 //Show custom image sizes on WP image embed page
 function my_insert_custom_image_sizes( $sizes ) {
