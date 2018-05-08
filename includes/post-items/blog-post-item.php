@@ -14,6 +14,8 @@
 	<?php if (has_post_thumbnail()) :
 		$image = wp_get_attachment_image_src(get_post_thumbnail_id(), 'blog_thumbnail'); ?>
 		<a class="content-image background-image-cover" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" style="background-image: url(<?php echo $image[0]; ?>)"></a>
+	<?php else : ?>
+		<a class="content-image background-image-cover" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" style="background-image: url(<?php bloginfo('template_url'); ?>/images/jtt-logo-gray.jpg)"></a>
 	<?php endif; ?>
 	<div class="content-inner flex-container flex-dir-column align-center">
 		<?php $categories = get_the_category();

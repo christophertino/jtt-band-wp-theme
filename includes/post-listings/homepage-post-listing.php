@@ -23,5 +23,9 @@ if ($recent_posts->have_posts()) : ?>
 	</div>
 	<?php wp_reset_postdata(); ?>
 <?php else : ?>
-	<h5>Sorry, no recent posts found.</h5>
+	<div class="grid-x grid-margin-y">
+		<div class="cell">
+			<h5>Sorry, no recent posts found.</h5>
+		</div>
+	</div>
 <?php endif; ?>

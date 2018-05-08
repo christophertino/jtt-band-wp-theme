@@ -85,7 +85,7 @@ section.blog-template {
 }
 
 /* BLOG ARCHIVE PAGE */
-section.blog-category {
+section.blog-archive {
 	.blog-header .background-image-cover {
 		background-position: top center;
 		height: 350px;
@@ -93,3 +93,8 @@ section.blog-category {
 }
 
 /* BLOG SINGLE POST */
+
+/* PAGINATION */
+.pagination .current {
+	border-radius: $pagination-radius;
+}

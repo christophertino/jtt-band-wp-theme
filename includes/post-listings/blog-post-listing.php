@@ -19,9 +19,13 @@
 				</div>
 			<?php endwhile; ?>
 		</div>
-		<?php wp_reset_postdata();
+		<?php wp_reset_postdata(); // @TODO: for archive.php this isn't needed
 	else : ?>
-		<p>Sorry, no blog posts found</p>
+		<div class="grid-x grid-margin-y">
+			<div class="cell">
+				<h5>Sorry, no blog posts found</h5>
+			</div>
+		</div>
 	<?php endif; ?>
 </div>
 <?php include(locate_template('includes/modules/pagination-module.php')); ?>

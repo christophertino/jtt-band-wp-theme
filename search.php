@@ -1,6 +1,6 @@
 <?php
 /**
- * Default Page/Post Template
+ * Search Results Page
  *
  * Just the Tip Band Theme
  * https://www.justthetipband.com
@@ -11,19 +11,22 @@
 ?>
 
 <?php get_header(); ?>
-<section class="index-page">
+<section class="search-results">
 	<div class="grid-container">
 		<div class="grid-x">
 			<div class="cell">
+				<h1>Search Results</h1>
+				<?php get_search_form(); ?>
+
 				<?php if ( have_posts() ) :
 					while ( have_posts() ) : the_post(); ?>
-						<?php get_template_part('includes/modules/breadcrumb-module'); ?>
-						<h1><?php the_title(); ?></h1>
-						<?php the_content(); ?>
+
 					<?php endwhile; ?>
 				<?php else : ?>
-					<p>Sorry, Page Not Found.</p>
+					<h5>Sorry, no blog posts found</h5>
 				<?php endif; ?>
+
+				<?php include(locate_template('includes/modules/pagination-module.php')); ?>
 			</div>
 		</div>
 	</div>
