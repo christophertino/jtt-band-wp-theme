@@ -11,7 +11,7 @@
 ?>
 
 <?php if ( function_exists('yoast_breadcrumb') ) : ?>
-	<div class="module breadcrumbs">
+	<div class="breadcrumbs">
 		<div class="grid-container">
 			<div class="grid-x">
 				<div class="cell">

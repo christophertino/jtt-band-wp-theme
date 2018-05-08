@@ -25,10 +25,10 @@
 			<?php while($featured_posts->have_posts()) : $featured_posts->the_post();
 				$count++;
 				if ($count === 1) : ?>
-					<div class="cell medium-6">
+					<div class="cell medium-7 featured-post-large">
 						<?php include(locate_template('includes/post-items/blog-post-item.php')); ?>
 					</div>
-					<div class="cell medium-6">
+					<div class="cell medium-5 featured-post-small">
 						<div class="grid-x grid-margin-x">
 				<?php else : ?>
 							<div class="cell">

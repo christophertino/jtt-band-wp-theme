@@ -37,7 +37,7 @@ class JustTheTip {
 					output += '<div class="cell">';
 					//anchor tag here with foundation tooltip. background image with cover, zoom on hover
 					output += '<span class="instagram-tooltips" data-tooltip data-alignment="center" tabindex="1" title="' + value.caption.text + '">';
-					output += '<a class="instagram-image" href="' + value.link + '" style="background-image:url(' + value.images.standard_resolution.url + ');" target="_blank"></a>';
+					output += '<a class="instagram-image background-image-cover" href="' + value.link + '" style="background-image:url(' + value.images.standard_resolution.url + ');" target="_blank"></a>';
 					output += '</span>';
 					output += '</div>';
 				});

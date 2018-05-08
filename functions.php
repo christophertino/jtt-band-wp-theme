@@ -11,7 +11,7 @@
 
 /**************** ADD SUPPORT FOR POST THUMBS ***************/
 add_theme_support( 'post-thumbnails' );
-add_image_size( 'hero_xlarge', 1440, 600, true ); // xlarge hero images (homepage)
+add_image_size( 'hero_xlarge', 1440, 600, true ); // xlarge hero images
 add_image_size( 'hero_large', 1440, 400, true ); // large hero images
 add_image_size( 'hero_medium', 1024, 400, true ); // medium hero images
 add_image_size( 'hero_small', 640, 300, true ); // small hero images

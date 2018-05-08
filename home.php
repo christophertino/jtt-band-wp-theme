@@ -16,17 +16,17 @@
 
 <?php get_header(); ?>
 <section class="blog-template">
-	<div class="module blog-header">
+	<div class="blog-header">
 		<?php $blog_image = get_field('blog_header_image', get_option('page_for_posts'));
 		if( !empty($blog_image) ): ?>
-			<div class="module-bg-image" data-interchange="[<?php echo $blog_image['sizes']['hero_small']; ?>, small], [<?php echo $blog_image['sizes']['hero_medium']; ?>, medium], [<?php echo $blog_image['sizes']['hero_large']; ?>, large]">
+			<div class="background-image-cover" data-interchange="[<?php echo $blog_image['sizes']['hero_small']; ?>, small], [<?php echo $blog_image['sizes']['hero_medium']; ?>, medium], [<?php echo $blog_image['sizes']['hero_xlarge']; ?>, large]">
 		<?php else : ?>
-			<div class="module-bg-image">
+			<div class="background-image-cover">
 		<?php endif; ?>
 			<div class="grid-container">
 				<div class="grid-x">
 					<div class="cell">
-						<h1><?php the_title(get_option('page_for_posts')); ?></h1>
+						<h1><?php echo get_the_title(get_option('page_for_posts')); ?></h1>
 						<?php if (get_field('blog_description', get_option('page_for_posts'))) : ?>
 							<p><?php the_field('blog_description', get_option('page_for_posts')); ?></p>
 						<?php endif; ?>
@@ -36,16 +36,23 @@
 		</div>
 	</div>
 
-	<div class="module blog-categories">
+	<div class="blog-categories">
 		<?php get_template_part('includes/menus/blog-category-menu'); ?>
 	</div>
 
-	<div class="module blog-featured-content">
+	<div class="blog-featured-posts">
 		<?php $excludeIDs = array(); ?>
 		<?php include(locate_template('includes/post-listings/featured-blog-post-listing.php')); ?>
 	</div>
 
-	<div class="module blog-posts">
+	<?php $filtered_posts = new WP_Query(array(
+		'post_type' => 'post',
+		'paged' => $paged,
+		'post_status' => 'publish',
+		'orderby' => 'date',
+		'post__not_in' => $excludeIDs //exclude featured posts
+	)); ?>
+	<div class="blog-posts">
 		<?php include(locate_template('includes/post-listings/blog-post-listing.php')); ?>
 	</div>
 </section>

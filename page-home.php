@@ -16,14 +16,14 @@
 		while ( have_posts() ) : the_post();
 
 			if( have_rows('homepage_carousel') ): ?>
-				<div class="module homepage-hero owl-carousel owl-theme">
+				<div class="homepage-hero owl-carousel owl-theme">
 					<?php while ( have_rows('homepage_carousel') ) : the_row();
 						$slide_image = get_sub_field('slide_image');
 						$slide_button_text = get_sub_field('slide_button_text');
 						$slide_button_link_internal = get_sub_field('button_link_internal');
 						$slide_button_link_external = get_sub_field('button_link_external');
 						if( !empty($slide_image) ): ?>
-							<div class="cell slide module-bg-image" data-interchange="[<?php echo $slide_image['sizes']['hero_small']; ?>, small], [<?php echo $slide_image['sizes']['hero_medium']; ?>, medium], [<?php echo $slide_image['sizes']['hero_xlarge']; ?>, large]">
+							<div class="cell slide background-image-cover" data-interchange="[<?php echo $slide_image['sizes']['hero_small']; ?>, small], [<?php echo $slide_image['sizes']['hero_medium']; ?>, medium], [<?php echo $slide_image['sizes']['hero_xlarge']; ?>, large]">
 						<?php else : ?>
 							<div class="cell slide">
 						<?php endif; ?>
@@ -51,14 +51,14 @@
 				</div>
 			<?php endif; ?>
 
-			<div class="module schedule">
+			<div class="schedule">
 				<?php $schedule_image = get_field('schedule_background_image');
 				if( !empty($schedule_image) ): ?>
-					<div class="module-bg-image" data-interchange="[<?php echo $schedule_image['sizes']['hero_small']; ?>, small], [<?php echo $schedule_image['sizes']['hero_medium']; ?>, medium], [<?php echo $schedule_image['sizes']['hero_large']; ?>, large]">
+					<div class="background-image-cover" data-interchange="[<?php echo $schedule_image['sizes']['hero_small']; ?>, small], [<?php echo $schedule_image['sizes']['hero_medium']; ?>, medium], [<?php echo $schedule_image['sizes']['hero_large']; ?>, large]">
 				<?php else : ?>
-					<div class="module-bg-image">
+					<div class="background-image-cover">
 				<?php endif; ?>
-					<div class="grid-container module-inner">
+					<div class="grid-container content-inner-padding">
 						<div class="grid-x">
 							<div class="cell">
 								<h2 class="text-center">Upcoming Shows</h2>
@@ -75,14 +75,14 @@
 				</div>
 			</div>
 
-			<div class="module news">
+			<div class="news">
 				<?php $news_image = get_field('news_background_image');
 				if( !empty($news_image) ): ?>
-					<div class="module-bg-image" data-interchange="[<?php echo $news_image['sizes']['hero_small']; ?>, small], [<?php echo $news_image['sizes']['hero_medium']; ?>, medium], [<?php echo $news_image['sizes']['hero_large']; ?>, large]">
+					<div class="background-image-cover" data-interchange="[<?php echo $news_image['sizes']['hero_small']; ?>, small], [<?php echo $news_image['sizes']['hero_medium']; ?>, medium], [<?php echo $news_image['sizes']['hero_large']; ?>, large]">
 				<?php else : ?>
-					<div class="module-bg-image">
+					<div class="background-image-cover">
 				<?php endif; ?>
-					<div class="grid-container module-inner">
+					<div class="grid-container content-inner-padding">
 						<div class="grid-x">
 							<div class="cell">
 								<h2 class="text-center">What's New</h2>
@@ -96,8 +96,8 @@
 				</div>
 			</div>
 
-			<div class="module soundcloud">
-				<div class="grid-container module-inner">
+			<div class="soundcloud">
+				<div class="grid-container content-inner-padding">
 					<div class="grid-x align-center">
 						<div class="cell medium-10 large-9">
 							<h2 class="text-center">Music</h2>
@@ -109,8 +109,8 @@
 				</div>
 			</div>
 
-			<div class="module instagram">
-				<div class="grid-container full module-inner">
+			<div class="instagram">
+				<div class="grid-container full content-inner-padding">
 					<div class="grid-x">
 						<div class="cell">
 							<h2 class="text-center">Instagram</h2>
@@ -120,8 +120,8 @@
 				</div>
 			</div>
 
-			<div class="module songlist">
-				<div class="grid-container module-inner">
+			<div class="songlist">
+				<div class="grid-container content-inner-padding">
 					<div class="grid-x align-center">
 						<div class="cell large-10">
 							<h2 class="text-center">Partial Artist List</h2>
@@ -133,14 +133,14 @@
 				</div>
 			</div>
 
-			<div class="module contact">
+			<div class="contact">
 				<?php $contact_image = get_field('contact_background_image');
 				if( !empty($contact_image) ): ?>
-					<div class="module-bg-image" data-interchange="[<?php echo $contact_image['sizes']['hero_small']; ?>, small], [<?php echo $contact_image['sizes']['hero_medium']; ?>, medium], [<?php echo $contact_image['sizes']['hero_large']; ?>, large]">
+					<div class="background-image-cover" data-interchange="[<?php echo $contact_image['sizes']['hero_small']; ?>, small], [<?php echo $contact_image['sizes']['hero_medium']; ?>, medium], [<?php echo $contact_image['sizes']['hero_large']; ?>, large]">
 				<?php else : ?>
-					<div class="module-bg-image">
+					<div class="background-image-cover">
 				<?php endif; ?>
-					<div class="grid-container module-inner">
+					<div class="grid-container content-inner-padding">
 						<div class="grid-x align-center">
 							<div class="cell medium-10 large-8 text-center">
 								<h2>Have Questions?</h2>

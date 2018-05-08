@@ -8,21 +8,19 @@
  * @license	Copyright (c) 2018 Just the Tip Band
  */
 
-/* GLOBAL MODULES */
-.module {
-	.module-bg-image {
-		background-position: center center;
-		background-repeat: no-repeat;
-		background-size: cover;
-	}
-	.module-inner {
-		padding-bottom: rem-calc(30);
-		padding-top: rem-calc(30);
-	}
-	.listing-content {
-		margin-bottom: rem-calc(30);
-		margin-top: rem-calc(30);
-	}
+/* REUSEABLE CLASSES */
+.background-image-cover {
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+.content-inner-padding {
+	padding-bottom: rem-calc(30);
+	padding-top: rem-calc(30);
+}
+.listing-content {
+	margin-bottom: rem-calc(30);
+	margin-top: rem-calc(30);
 }
 
 /* HOMEPAGE */
@@ -33,7 +31,7 @@ section.home-template {
 		.slide {
 			align-items: center;
 			display: flex;
-			&.module-bg-image {min-height: 600px;}
+			&.background-image-cover {min-height: 600px;}
 			.grid-container {flex-grow: 1;}
 			h1 {
 				letter-spacing: -2px;
@@ -51,7 +49,7 @@ section.home-template {
 		}
 	}
 	.schedule, .news, .contact {
-		.module-bg-image {min-height: 300px;}
+		.background-image-cover {min-height: 300px;}
 	}
 	.news {
 		.homepage-post-item {
@@ -84,16 +82,13 @@ section.home-template {
 		background-color: $light-gray;
 	}
 	.instagram {
-		.module-inner {padding-bottom: 0;}
+		.content-inner-padding {padding-bottom: 0;}
 		#instagram-feed {margin-bottom: 0;}
 		.instagram-tooltips {
 			display: block;
 			overflow: hidden;
 		}
 		.instagram-image {
-			background-position: center center;
-			background-repeat: no-repeat;
-			background-size: cover;
 			display: block;
 			height: 275px;
 			transition: transform 0.5s;
@@ -122,15 +117,13 @@ section.home-template {
 }
 
 @include breakpoint(large) {
-	.module {
-		.module-inner {
-			padding-bottom: rem-calc(50);
-			padding-top: rem-calc(50);
-		}
-		.listing-content {
-			margin-bottom: rem-calc(50);
-			margin-top: rem-calc(50);
-		}
+	.content-inner-padding {
+		padding-bottom: rem-calc(50);
+		padding-top: rem-calc(50);
+	}
+	.listing-content {
+		margin-bottom: rem-calc(50);
+		margin-top: rem-calc(50);
 	}
 	section.home-template .songlist {
 		.artist-columns {

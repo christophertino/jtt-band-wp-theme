@@ -20,16 +20,15 @@
 	'next_text' => 'Next'
 );
 $pagination = paginate_links($args);
-
-if (!is_null($buildPagination)) : ?>
-	<div class="module">
-		<div class="grid-container">
-			<div class="grid-x">
-				<div class="cell">
-					<ul class="pagination">
-
-					</ul>
-				</div>
+if (!is_null($pagination)) : ?>
+	<div class="grid-container">
+		<div class="grid-x">
+			<div class="cell">
+				<ul class="pagination text-center">
+					<?php foreach ($pagination as $link) : ?>
+						<li><?php echo $link; ?></li>
+					<?php endforeach; ?>
+				</ul>
 			</div>
 		</div>
 	</div>
