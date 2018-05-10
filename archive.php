@@ -16,19 +16,14 @@
 ?>
 
 <?php get_header(); ?>
-<section class="blog-template blog-archive">
+<?php $blog_bg_image = get_field('blog_body_image', get_option('page_for_posts')); ?>
+<section class="blog-template blog-archive background-image-cover" style="background-image:url(<?php echo $blog_bg_image['url']; ?>);">
+
 	<div class="blog-header">
-		<?php $blog_image = get_field('blog_header_image', get_option('page_for_posts'));
-		if( !empty($blog_image) ): ?>
-			<div class="background-image-cover" data-interchange="[<?php echo $blog_image['sizes']['hero_small']; ?>, small], [<?php echo $blog_image['sizes']['hero_medium']; ?>, medium], [<?php echo $blog_image['sizes']['hero_large']; ?>, large]">
-		<?php else : ?>
-			<div class="background-image-cover">
-		<?php endif; ?>
-			<div class="grid-container">
-				<div class="grid-x">
-					<div class="cell">
-						<h1><?php the_archive_title(); ?></h1>
-					</div>
+		<div class="grid-container">
+			<div class="grid-x">
+				<div class="cell">
+					<h1><?php the_archive_title(); ?></h1>
 				</div>
 			</div>
 		</div>

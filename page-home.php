@@ -125,6 +125,7 @@
 					<div class="grid-x align-center">
 						<div class="cell large-10">
 							<h2 class="text-center">Partial Artist List</h2>
+								<iframe src="https://open.spotify.com/embed?uri=spotify:user:cl6four3:playlist:7kpZKlw9dr5VcMRPHHbtP2" width="100%" height="500" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
 							<div class="listing-content artist-columns">
 								<?php the_field('artist_list'); ?>
 							</div>

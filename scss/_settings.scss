@@ -74,7 +74,7 @@ $light-gray: #e6e6e6;
 $medium-gray: #cacaca;
 $dark-gray: #2a2a2a;
 $black: #0a0a0a;
-$white: #fefefe;
+$white: #f8f8f8;
 $foundation-palette: (
 	primary: $orange,
 	secondary: $green,
@@ -82,7 +82,7 @@ $foundation-palette: (
 	warning: #ffae00,
 	alert: #cc4b37,
 );
-$body-background: $dark-gray;
+$body-background: $black;
 $body-font-color: $white;
 $body-font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif;
 $body-antialiased: true;
@@ -850,7 +850,7 @@ $tooltip-radius: $global-radius;
 
 $topbar-padding: 0.5rem;
 $topbar-background: transparent;
-$topbar-submenu-background: rgba(0,0,0,0.6);
+$topbar-submenu-background: rgba(0,0,0,0.8);
 $topbar-title-spacing: 0.5rem 1rem 0.5rem 0;
 $topbar-input-width: 200px;
 $topbar-unstack-breakpoint: medium;

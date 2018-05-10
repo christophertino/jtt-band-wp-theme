@@ -37,7 +37,7 @@ a {
 h1,h2,h3,h4,h5,h6 {text-transform: uppercase;}
 
 /* WRAPPERS */
-main {background-color: $black;}
+main {}
 
 /* HEADER */
 header {
@@ -141,6 +141,7 @@ header {
 
 /* FOOTER */
 footer {
+	background: $dark-gray;
 	font-size: rem-calc(14);
 	padding: rem-calc(20 0 30);
 	.footer-upper {

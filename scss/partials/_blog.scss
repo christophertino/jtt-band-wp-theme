@@ -10,13 +10,9 @@
 
 /* BLOG PAGE */
 section.blog-template {
+	background-attachment: fixed;
 	.blog-header {
-		.background-image-cover {
-			align-items: center;
-			display: flex;
-			height: 600px;
-		}
-		.grid-container {flex-grow: 1;}
+		padding-top: 150px;
 		h1 {
 			letter-spacing: -2px;
 			margin-bottom: rem-calc(15);
@@ -42,40 +38,61 @@ section.blog-template {
 		}
 	}
 	.blog-post-item {
-		position: relative;
+		background-color: $white;
+		color: $black;
 		.content-image {
 			display: block;
-			height: 300px;
+			height: 260px;
 		}
 		.content-inner {
-			background-color: rgba(0,0,0,0.8);
-			bottom: 0;
-			padding: rem-calc(10);
-			position: absolute;
-			width: 100%;
+			padding: rem-calc(15 20);
 		}
-		.categories {text-transform: uppercase;}
+		.categories {
+			font-size: rem-calc(14);
+			text-transform: uppercase;
+		}
 		h5 {
 			text-transform: none;
+			a {
+				color: $black;
+				&:hover {color: $primary-color;}
+			}
 		}
 		ul.social-share {
 			li.date {
-				padding-right: 10px;
-				i {padding-right: 5px;}
+				span {
+					font-size: rem-calc(14);
+					padding: 0 10px;
+				}
 			}
 			li a {
-				padding: 0 10px;
+				padding: 0 7px;
 				color: $secondary-color;
 				&:hover {color: darken($secondary-color, 10%);}
 			}
 		}
 	}
 	.blog-featured-posts {
-		.featured-post-large .blog-post-item .content-image {
-			height: 580px;
+		margin-bottom: map-get($grid-column-gutter, medium);
+		.blog-post-item {
+			position: relative;
+			.content-inner {
+				background-color: $white;
+				bottom: 0;
+				position: absolute;
+				width: 100%;
+			}
 		}
-		.featured-post-small .blog-post-item .content-image {
-			height: 290px;
+		.featured-post-large {
+			.content-image {
+				height: 610px;
+			}
+		}
+		.featured-post-small {
+			.cell:first-child {margin-bottom: map-get($grid-column-gutter, medium);}
+			.content-image {
+				height: 290px;
+			}
 		}
 	}
 	.blog-posts {}
@@ -85,16 +102,23 @@ section.blog-template {
 }
 
 /* BLOG ARCHIVE PAGE */
-section.blog-archive {
-	.blog-header .background-image-cover {
-		background-position: top center;
-		height: 350px;
+section.blog-archive {}
+
+/* BLOG SINGLE POST */
+section.blog-single {
+	background-attachment: fixed;
+	padding-top: 170px;
+	.blog-content {
+		background-color: $white;
+		border-radius: $global-radius;
+		color: $black;
+		margin: rem-calc(40 0);
+		padding: rem-calc(30 40);
 	}
 }
 
-/* BLOG SINGLE POST */
-
 /* PAGINATION */
-.pagination .current {
-	border-radius: $pagination-radius;
+.pagination {
+	.current {border-radius: $pagination-radius;}
+	a {background-color: $topbar-submenu-background;}
 }

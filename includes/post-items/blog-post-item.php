@@ -17,7 +17,7 @@
 	<?php else : ?>
 		<a class="content-image background-image-cover" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" style="background-image: url(<?php bloginfo('template_url'); ?>/images/jtt-logo-gray.jpg)"></a>
 	<?php endif; ?>
-	<div class="content-inner flex-container flex-dir-column align-center">
+	<div class="content-inner" data-equalizer-watch>
 		<?php $categories = get_the_category();
 		if (!empty($categories)) : ?>
 			<div class="categories">
@@ -27,12 +27,12 @@
 			</div>
 		<?php endif; ?>
 		<h5>
-			<a class="white-link" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+			<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
 				<?php the_title(); ?>
 			</a>
 		</h5>
 		<ul class="menu align-middle social-share">
-			<li class="date"><i class="far fa-clock"></i> <?php the_time('l F jS'); ?></li>
+			<li class="date"><i class="far fa-clock"></i><span><?php the_time('l F jS'); ?></span></li>
 			<li><a href="https://www.facebook.com/sharer.php?u=<?php the_permalink(); ?>" title="Share on Facebook"><i class="fab fa-facebook-f"></i></a></li>
 			<li><a href="https://twitter.com/share?text=<?php echo urlencode(get_the_title()); ?>&url=<?php the_permalink(); ?>&via=Just the Tip Band" title="Share on Twitter"><i class="fab fa-twitter"></i></a></li>
 		</ul>

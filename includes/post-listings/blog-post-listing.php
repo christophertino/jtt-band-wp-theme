@@ -12,7 +12,7 @@
 
 <div class="grid-container">
 	<?php if( $filtered_posts->have_posts() ): ?>
-		<div class="grid-x grid-margin-x grid-margin-y small-up-1 medium-up-2 large-up-3">
+		<div class="grid-x grid-margin-x grid-margin-y small-up-1 medium-up-2 large-up-3" data-equalizer data-equalize-on="medium">
 			<?php while ( $filtered_posts->have_posts()) : $filtered_posts->the_post(); ?>
 				<div class="cell">
 					<?php get_template_part('includes/post-items/blog-post-item'); ?>
