@@ -11,15 +11,17 @@
 ?>
 
 <?php get_header(); ?>
-<section class="index-page">
+<?php $page_bg_image = get_field('default_page_background_image', 'option'); ?>
+<section class="index-page background-image-cover" style="background-image:url(<?php echo $page_bg_image['url']; ?>);">
 	<div class="grid-container">
 		<div class="grid-x">
 			<div class="cell">
 				<?php if ( have_posts() ) :
 					while ( have_posts() ) : the_post(); ?>
-						<?php get_template_part('includes/modules/breadcrumb-module'); ?>
-						<h1><?php the_title(); ?></h1>
-						<?php the_content(); ?>
+						<article class="page-content white-bg">
+							<h1><?php the_title(); ?></h1>
+							<?php the_content(); ?>
+						</article>
 					<?php endwhile; ?>
 				<?php else : ?>
 					<p>Sorry, Page Not Found.</p>

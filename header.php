@@ -34,7 +34,7 @@
 </head>
 <body <?php body_class(); ?>>
 	<header>
-		<div class="hide-for-large data-sticky-container">
+		<div class="hide-for-large" data-sticky-container>
 			<div class="title-bar" data-sticky data-top-anchor="1" data-sticky-on="small" data-margin-top="0">
 				<div class="title-bar-left">
 					<button class="menu-icon" type="button" data-open="mobile-modal"></button>

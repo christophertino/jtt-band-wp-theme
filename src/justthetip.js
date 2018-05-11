@@ -46,6 +46,14 @@ class JustTheTip {
 			}
 		}, 'json');
 	}
+
+	blogPost() {
+		// Open linked blog posts images in foundation reveal modal
+		$('.blog-content a[href$="jpg"], .blog-content a[href$="png"], .blog-content a[href$="jpeg"]').on('click', function(e){
+			e.preventDefault();
+			$('#blog-post-modal').append('<img src="' + $(this).attr('href') + '">').foundation('open');
+		})
+	}
 }
 
 // singleton

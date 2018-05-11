@@ -13,7 +13,7 @@
 	<footer>
 		<div class="grid-container">
 			<div class="grid-x align-middle footer-upper">
-				<div class="medium-6 cell">
+				<div class="medium-7 large-8 cell">
 					<?php wp_nav_menu(array(
 						'menu' => 'Footer Menu',
 						'menu_id' => 'footer-menu',
@@ -22,8 +22,14 @@
 						'menu_class' => 'menu horizontal no-bullet')
 					); ?>
 				</div>
-				<div class="medium-6 cell open-source">
-					<div class="flex-container align-right align-middle">
+				<div class="medium-6 large-4 cell">
+					<div class="mailchimp text-center">
+						<?php get_template_part('includes/modules/mailchimp-module'); ?>
+					</div>
+				</div>
+				<div class="cell open-source">
+					<div class="flex-container align-middle align-right">
+						<span>Contribute on Github</span>
 						<a class="white-link" href="https://github.com/christophertino/jtt-band-wp-theme" title="Just the Tip on GitHub" target="_blank"><i class="fab fa-github"></i></a>
 					</div>
 				</div>

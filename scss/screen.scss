@@ -156,8 +156,19 @@ footer {
 			}
 		}
 		.open-source {
-			a {
-				i.fab {font-size: rem-calc(30);}
+			span {
+				margin-right: 10px;
+				text-transform: uppercase;
+			}
+			a i.fab {font-size: rem-calc(30);}
+		}
+		.mailchimp {
+			padding: rem-calc(20 0 10);
+			.mailchimp-form {
+				.bot-catch {
+					position: absolute;
+					left: -5000px;
+				}
 			}
 		}
 	}
@@ -193,7 +204,7 @@ footer {
 	}
 }
 
-/* MODULES */
+/* SOCIAL MENU */
 ul.social-menu {
 	> li {
 		> a {

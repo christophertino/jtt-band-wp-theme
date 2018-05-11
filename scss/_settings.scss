@@ -71,7 +71,7 @@ $global-lineheight: 1.5;
 $orange: #f15a29;
 $green: #85b22c;
 $light-gray: #e6e6e6;
-$medium-gray: #cacaca;
+$medium-gray: #8f8f8f;
 $dark-gray: #2a2a2a;
 $black: #0a0a0a;
 $white: #f8f8f8;
@@ -431,7 +431,7 @@ $select-background: $white;
 $select-triangle-color: $dark-gray;
 $select-radius: $global-radius;
 $input-color: $black;
-$input-placeholder-color: $medium-gray;
+$input-placeholder-color: darken($medium-gray, 50%);
 $input-font-family: inherit;
 $input-font-size: rem-calc(16);
 $input-font-weight: $global-weight-normal;
@@ -732,7 +732,7 @@ $responsive-embed-ratios: (
 // ----------
 
 $reveal-background: $white;
-$reveal-width: 600px;
+$reveal-width: 700px;
 $reveal-max-width: $global-width;
 $reveal-padding: $global-padding;
 $reveal-border: 1px solid $medium-gray;

@@ -24,5 +24,11 @@
 	}
 }
 
+/* RELATED SHOWS */
+.gigpress-related-show {
+	.date {margin-top: rem-calc(30);}
+	.button {margin-top: rem-calc(15);}
+}
+
 /* MEDIA QUERIES */
 @include breakpoint(large) {}

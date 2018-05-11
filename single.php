@@ -20,21 +20,33 @@
 		while ( have_posts() ) : the_post(); ?>
 				<div class="grid-container">
 					<div class="grid-x grid-margin-x align-center">
-						<div class="cell medium-10 large-10">
-							<article class="blog-content">
+						<div class="cell medium-8">
+							<article class="blog-content white-bg">
 								<?php get_template_part('includes/modules/breadcrumb-module'); ?>
-								<?php if (has_post_thumbnail()) : ?>
-									<div class="background-image-cover" style="background-image: url(<?php the_post_thumbnail_url('hero_large') ?>);"></div>
-								<?php endif; ?>
 								<h1><?php the_title(); ?></h1>
-								<p class="date"> <?php the_date(); ?> &ndash; <?php the_author(); ?></p>
+								<ul class="menu align-middle blog-post-meta">
+									<li class="date"><i class="far fa-clock"></i><span><?php the_date(); ?></span></li>
+									<li class="divider">|</li>
+									<li><?php the_author_posts_link(); ?></li>
+									<li class="divider">|</li>
+									<li><a href="https://www.facebook.com/sharer.php?u=<?php the_permalink(); ?>" title="Share on Facebook"><i class="fab fa-facebook-f"></i></a></li>
+									<li><a href="https://twitter.com/share?text=<?php echo urlencode(get_the_title()); ?>&url=<?php the_permalink(); ?>&via=Just the Tip Band" title="Share on Twitter"><i class="fab fa-twitter"></i></a></li>
+								</ul>
 								<?php the_content(); ?>
 							</article>
 						</div>
+						<aside class="cell medium-4 blog-sidebar">
+							<?php get_template_part('includes/modules/blog-sidebar'); ?>
+						</aside>
 					</div>
 				</div>
 		<?php endwhile; ?>
 	<?php endif; ?>
-	<?php //recent / popular posts ?>
+	<?php //@TODO: recent / popular posts ?>
 </section>
+<div class="reveal" id="blog-post-modal" data-reveal>
+	<button class="close-button" data-close aria-label="Close modal" type="button">
+		<span aria-hidden="true">&times;</span>
+	</button>
+</div>
 <?php get_footer(); ?>

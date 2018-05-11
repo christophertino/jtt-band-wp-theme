@@ -18,7 +18,6 @@
 <?php get_header(); ?>
 <?php $blog_bg_image = get_field('blog_body_image', get_option('page_for_posts')); ?>
 <section class="blog-template blog-archive background-image-cover" style="background-image:url(<?php echo $blog_bg_image['url']; ?>);">
-
 	<div class="blog-header">
 		<div class="grid-container">
 			<div class="grid-x">

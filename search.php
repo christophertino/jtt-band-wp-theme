@@ -18,13 +18,10 @@
 				<h1>Search Results</h1>
 				<?php get_search_form(); ?>
 
-				<?php if ( have_posts() ) :
-					while ( have_posts() ) : the_post(); ?>
-
-					<?php endwhile; ?>
-				<?php else : ?>
-					<h5>Sorry, no blog posts found</h5>
-				<?php endif; ?>
+				<?php $filtered_posts = $wp_query; // send default query to blog-post-listing.php ?>
+				<div class="blog-posts">
+					<?php include(locate_template('includes/post-listings/blog-post-listing.php')); ?>
+				</div>
 
 				<?php include(locate_template('includes/modules/pagination-module.php')); ?>
 			</div>

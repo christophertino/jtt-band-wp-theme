@@ -63,6 +63,8 @@ function load_js_modules() {
 
 	if (is_front_page('home')) {
 		$output .= 'JustTheTip.homepage();';
+	} elseif (is_single()) {
+		$output .= 'JustTheTip.blogPost();';
 	}
 
 	$output .= '});</script>';
@@ -87,9 +89,9 @@ function jtt_widgets_init() {
 	register_sidebar( array(
 		'name' => 'Blog Sidebar',
 		'id' => 'blog_sidebar',
-		'before_widget' => '<div>',
-		'after_widget' => '</div>',
-		'before_title' => '<h4>',
+		'before_widget' => '<li id="%1$s" class="widget white-bg %2$s">',
+		'after_widget' => '</li>',
+		'before_title' => '<h4 class="widgettitle">',
 		'after_title' => '</h4>',
 	));
 }
@@ -213,7 +215,7 @@ function update_archive_title($title) {
 	} elseif ( is_tag() ) {
 		$title = single_tag_title( '', false );
 	} elseif ( is_author() ) {
-		$title = '<span class="vcard">' . get_the_author() . '</span>';
+		$title = 'Posts By: ' . get_the_author();
 	} elseif ( is_post_type_archive() ) {
 		$title = post_type_archive_title( '', false );
 	} elseif ( is_tax() ) {

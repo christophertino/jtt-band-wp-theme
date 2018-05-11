@@ -1,6 +1,6 @@
 <?php
 /**
- * Breadcrumb Module
+ * Blog Sidebar
  *
  * Just the Tip Band Theme
  * https://www.justthetipband.com
@@ -10,8 +10,8 @@
  */
 ?>
 
-<?php if ( function_exists('yoast_breadcrumb') ) : ?>
-	<div class="breadcrumbs">
-		<?php yoast_breadcrumb(); ?>
-	</div>
+<?php if (is_active_sidebar('blog_sidebar')) : ?>
+	<ul class="no-bullet sidebar-list">
+		<?php dynamic_sidebar('blog_sidebar'); ?>
+	</ul>
 <?php endif; ?>
