@@ -26,7 +26,7 @@
 /* HOMEPAGE */
 section.home-template {
 	h2 {color: $primary-color;}
-	a.button i.fas {margin-right: 5px;}
+	a.button i {margin-right: 5px;}
 	.homepage-hero {
 		.slide {
 			align-items: center;
@@ -82,7 +82,6 @@ section.home-template {
 		background-color: $light-gray;
 	}
 	.instagram {
-		.content-inner-padding {padding-bottom: 0;}
 		#instagram-feed {margin-bottom: 0;}
 		.instagram-tooltips {
 			display: block;

@@ -62,10 +62,10 @@
 						<div class="grid-x">
 							<div class="cell">
 								<h2 class="text-center">Upcoming Shows</h2>
-								<?php
-									$options = array('scope' => 'upcoming', 'limit' => 4);
-									echo gigpress_sidebar($options);
-								?>
+								<div class="listing-content">
+									<?php $options = array('scope' => 'upcoming', 'limit' => 4);
+										echo gigpress_sidebar($options); ?>
+								</div>
 								<div class="text-center">
 									<a href="<?php echo get_option('siteurl'); ?>/schedule" class="button large hollow"><i class="fas fa-th-large"></i> See the Full Schedule</a>
 								</div>
@@ -86,7 +86,10 @@
 						<div class="grid-x">
 							<div class="cell">
 								<h2 class="text-center">What's New</h2>
-								<?php include(locate_template('includes/post-listings/homepage-post-listing.php')); ?>
+
+								<div class="listing-content">
+									<?php include(locate_template('includes/post-listings/homepage-post-listing.php')); ?>
+								</div>
 								<div class="text-center">
 									<a href="<?php echo get_option('siteurl'); ?>/blog" class="button large hollow"><i class="fas fa-newspaper"></i> Read More News</a>
 								</div>
@@ -102,7 +105,20 @@
 						<div class="cell medium-10 large-9">
 							<h2 class="text-center">Music</h2>
 							<div class="listing-content">
-								<iframe width="100%" height="450" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/42087972&color=%23ff5500&auto_play=false&hide_related=true&show_comments=false&show_user=false&show_reposts=false&show_teaser=false"></iframe>
+								<?php $track_ids = get_field('audio_playlist', false, false);
+								$attr = array(
+									'type' => 'audio',
+									'ids' => $track_ids,
+									'style' => 'light',
+									'tracklist' => true,
+									'tracknumbers' => true,
+									'images' => true,
+									'artists' => true
+								);
+								echo wp_playlist_shortcode($attr); ?>
+							</div>
+							<div class="text-center">
+								<a href="https://soundcloud.com/just-the-tip-band" class="button large hollow" target="_blank" title="Just the Tip on Soundcloud"><i class="fab fa-soundcloud"></i> More on SoundCloud</a>
 							</div>
 						</div>
 					</div>
@@ -114,7 +130,12 @@
 					<div class="grid-x">
 						<div class="cell">
 							<h2 class="text-center">Instagram</h2>
-							<div id="instagram-feed" class="listing-content"></div>
+							<div class="listing-content">
+								<div id="instagram-feed" class="listing-content"></div>
+							</div>
+							<div class="text-center">
+								<a href="https://www.instagram.com/justthetipband/" class="button large hollow" target="_blank" title="Just the Tip on Instagram"><i class="fab fa-instagram"></i> Follow Us</a>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -125,9 +146,11 @@
 					<div class="grid-x align-center">
 						<div class="cell large-10">
 							<h2 class="text-center">Partial Artist List</h2>
-								<iframe src="https://open.spotify.com/embed?uri=spotify:user:cl6four3:playlist:7kpZKlw9dr5VcMRPHHbtP2" width="100%" height="500" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
 							<div class="listing-content artist-columns">
 								<?php the_field('artist_list'); ?>
+							</div>
+							<div class="text-center">
+								<a href="https://open.spotify.com/user/cl6four3/playlist/7kpZKlw9dr5VcMRPHHbtP2" class="button large hollow" target="_blank" title="Just the Tip on Spotify"><i class="fab fa-spotify"></i> Ful Songlist</a>
 							</div>
 						</div>
 					</div>

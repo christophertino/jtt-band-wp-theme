@@ -25,6 +25,7 @@ const SASS_DIR = path.resolve(__dirname, 'scss');
 module.exports = {
 	entry: {
 		bundle: [SRC_DIR + '/index.js'],
+		jquery: [SRC_DIR + '/jquery.js'],
 		screen: [SASS_DIR + '/screen.scss'],
 		foundation: [SASS_DIR + '/foundation.scss'],
 		login: [SASS_DIR + '/login.scss'],

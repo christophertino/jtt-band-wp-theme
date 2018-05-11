@@ -33,20 +33,24 @@ function my_insert_custom_image_sizes( $sizes ) {
 add_filter( 'image_size_names_choose', 'my_insert_custom_image_sizes' );
 
 /******************** JAVASCRIPT LOADER *********************/
-function deregister_native_jquery() {
+// Get rid of unused WP defaults, including a legacy jQuery v1
+function deregister_native_scripts() {
 	if (!is_admin()) {
 		wp_deregister_script('jquery');
+		wp_deregister_script('wp-embed');
 	}
 }
-add_action('init', 'deregister_native_jquery');
+add_action('init', 'deregister_native_scripts');
 
 function load_scripts() {
-	wp_register_script('bundle', get_template_directory_uri() . '/dist/bundle.js', false, '1.0.0', false);
+	wp_register_script('jquery', get_template_directory_uri() . '/dist/jquery.js', false, '3.3.1', false);
+	wp_register_script('bundle', get_template_directory_uri() . '/dist/bundle.js', array('jquery'), '1.0.0', false);
 
 	if (is_page('Contact') && function_exists('wpcf7_enqueue_scripts')) :
 		wpcf7_enqueue_scripts();
 	endif;
 
+	wp_enqueue_script('jquery');
 	wp_enqueue_script('bundle');
 }
 add_action('wp_enqueue_scripts', 'load_scripts');
