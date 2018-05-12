@@ -8,6 +8,30 @@
  * @license	Copyright (c) 2018 Just the Tip Band
  */
 
+/* GIGPRESS LIST */
+h3.gigpress-artist-heading {color: $primary-color;}
+.gigpress-table {
+	margin-bottom: rem-calc(30);
+	thead, tbody, tfoot {
+		border-right: 0;
+		border-left: 0;
+	}
+	thead {
+		border-bottom: 2px solid $medium-gray;
+		text-transform: uppercase;
+	}
+	tbody {font-size: rem-calc(14);}
+	button, .button {margin-bottom: 0;}
+	.gigpress-row {border-bottom-color: lighten($light-gray, 20%);}
+	.gigpress-info {
+		border-bottom: 2px solid $medium-gray;
+		> td .gigpress-info-item:first-child {padding-left: 0;}
+		.gigpress-info-item {
+			padding: rem-calc(0 10);
+		}
+	}
+}
+
 /* GIGPRESS SIDEBAR */
 .gigpress-listing {
 	p {margin-bottom: 5px;}
