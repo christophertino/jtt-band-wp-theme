@@ -113,6 +113,32 @@ section.home-template {
 	.contact {}
 }
 
+/* VIDEOS PAGE */
+section.videos-template {
+	.page-header {
+		margin-bottom: rem-calc(30);
+	}
+	.video-hero {
+		.item-video {height: 600px;}
+		.owl-video-tn {
+			@extend .background-image-cover;
+		}
+	}
+	.page-content {
+		h3 {color: $primary-color}
+		.wp-video {
+			margin-left: auto;
+			margin-right: auto;
+		}
+		iframe, .wp-video {
+			margin-bottom: 20px;
+		}
+		a.button i {
+			margin-right: 5px;
+		}
+	}
+}
+
 /* DEFAULT PAGE TEMPLATE */
 .index-page {
 	background-attachment: fixed;

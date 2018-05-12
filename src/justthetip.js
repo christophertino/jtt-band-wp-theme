@@ -47,6 +47,26 @@ class JustTheTip {
 		}, 'json');
 	}
 
+	videoPage() {
+		$('.video-hero').owlCarousel({
+			items: 1,
+			loop: true,
+			video: true,
+			nav: true,
+			navText: ['<i class=\"fa fa-angle-left\"></i>', '<i class=\"fa fa-angle-right\"></i>'],
+			responsive: {
+				640: {
+					margin: 15,
+					stagePadding: 100,
+				},
+				1024: {
+					margin: 30,
+					stagePadding: 200,
+				}
+			}
+		});
+	}
+
 	blogPost() {
 		// Open linked blog posts images in foundation reveal modal
 		$('.blog-content a[href$="jpg"], .blog-content a[href$="png"], .blog-content a[href$="jpeg"]').on('click', function(e){

@@ -29,7 +29,6 @@
 				</div>
 				<div class="cell open-source">
 					<div class="flex-container align-middle align-right">
-						<span>Contribute on Github</span>
 						<a class="white-link" href="https://github.com/christophertino/jtt-band-wp-theme" title="Just the Tip on GitHub" target="_blank"><i class="fab fa-github"></i></a>
 					</div>
 				</div>
