@@ -111,7 +111,9 @@ section.blog-single {
 	.blog-content {
 		margin: rem-calc(40 0);
 	}
-	h1 {margin-bottom: 0;}
+	h1 {
+		line-height: 110%;
+	}
 	h3 {color: $secondary-color;}
 	.blog-post-meta {
 		color: $dark-gray;
@@ -193,7 +195,7 @@ aside.blog-sidebar {
 /* BREADCRUMBS */
 .breadcrumbs {
 	span {
-		display: inline-block;
+		font-family: $header-font-family;
 		font-size: rem-calc(14);
 		font-weight: normal;
 		line-height: 125%;

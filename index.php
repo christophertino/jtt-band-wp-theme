@@ -24,7 +24,7 @@
 						</article>
 					<?php endwhile; ?>
 				<?php else : ?>
-					<p>Sorry, Page Not Found.</p>
+					<h5>Sorry, Page Not Found.</h5>
 				<?php endif; ?>
 			</div>
 		</div>
