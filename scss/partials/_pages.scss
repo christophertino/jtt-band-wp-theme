@@ -115,9 +115,6 @@ section.home-template {
 
 /* VIDEOS PAGE */
 section.videos-template {
-	.page-header {
-		margin-bottom: rem-calc(30);
-	}
 	.video-hero {
 		.item-video {height: 600px;}
 		.owl-video-tn {
@@ -139,10 +136,36 @@ section.videos-template {
 	}
 }
 
+/* ABOUT PAGE */
+.page-about {
+	blockquote {
+		margin: 0 auto 30px;
+		max-width: 100%;
+		width: 550px;
+		p {
+			font-family: $header-font-family;
+			font-size: rem-calc(28);
+			font-weight: 700;
+			text-transform: uppercase;
+		}
+		cite {text-align: right;}
+	}
+}
+
+/* WEDDINGS PAGE */
+section.weddings-template {
+	.weddings-hero .item {
+		height: 600px;
+	}
+}
+
 /* DEFAULT PAGE TEMPLATE */
-.index-page {
+section.index-page {
 	background-attachment: fixed;
 	padding-top: 170px;
+	.page-header {
+		margin-bottom: rem-calc(30);
+	}
 	.page-content {
 		margin: rem-calc(40 0);
 	}

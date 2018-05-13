@@ -65,6 +65,8 @@ function load_js_modules() {
 		$output .= 'JustTheTip.homepage();';
 	} elseif (is_page('Videos')) {
 		$output .= 'JustTheTip.videoPage();';
+	} elseif (is_page('Weddings')) {
+		$output .= 'JustTheTip.weddingsPage();';
 	} elseif (is_single()) {
 		$output .= 'JustTheTip.blogPost();';
 	}
