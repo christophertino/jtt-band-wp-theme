@@ -150,7 +150,7 @@
 								<?php the_field('artist_list'); ?>
 							</div>
 							<div class="text-center">
-								<a href="https://open.spotify.com/user/cl6four3/playlist/7kpZKlw9dr5VcMRPHHbtP2" class="button large hollow" target="_blank" title="Just the Tip on Spotify"><i class="fab fa-spotify"></i> Ful Songlist</a>
+								<a href="https://open.spotify.com/user/cl6four3/playlist/7kpZKlw9dr5VcMRPHHbtP2" class="button large hollow" target="_blank" title="Just the Tip on Spotify"><i class="fab fa-spotify"></i> Full Songlist</a>
 							</div>
 						</div>
 					</div>

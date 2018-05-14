@@ -34,6 +34,9 @@
 							</ul>
 							<?php the_content(); ?>
 						</article>
+						<div class="comment-wrap white-bg">
+							<?php comments_template(); ?>
+						</div>
 					</div>
 					<aside class="cell medium-4 blog-sidebar">
 						<?php get_template_part('includes/modules/blog-sidebar'); ?>

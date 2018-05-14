@@ -88,6 +88,9 @@ add_action( 'init', 'register_menus' );
 // Register custom navigation walkers
 require_once('includes/menus/topbar-walker-menu.php');
 
+/********************** COMMENTS **************************/
+require_once(get_template_directory() .'/includes/modules/comments-module.php');
+
 /****************** SIDEBARS & WIDGETS  *********************/
 function jtt_widgets_init() {
 	register_sidebar( array(
