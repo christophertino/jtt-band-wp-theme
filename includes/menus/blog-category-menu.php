@@ -21,7 +21,7 @@
 				</li>
 				<?php $categories = get_categories(array(
 					'hide_empty' => true,
-					'orderby' => 'term_order',
+					'orderby' => 'title',
 					'order'   => 'ASC'
 				));
 				foreach( $categories as $category ) : ?>

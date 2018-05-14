@@ -29,7 +29,7 @@
 						<?php endif; ?>
 								<div class="grid-container">
 									<div class="grid-x">
-										<div class="small-12 medium-8 large-6 cell">
+										<div class="small-12 medium-10 large-8 cell">
 											<h1><?php the_sub_field('slide_title'); ?></h1>
 											<p><?php the_sub_field('slide_content'); ?></p>
 											<?php if($slide_button_text) :

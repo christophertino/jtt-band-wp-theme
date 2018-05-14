@@ -17,9 +17,9 @@ class JustTheTip {
 		$('.homepage-hero').owlCarousel({
 			items: 1,
 			autoplay: true,
-			autoplayHoverPause: true,
+			autoplayHoverPause: false,
 			loop: true,
-			nav: false,
+			nav: true,
 			navText: ['<i class=\"fa fa-angle-left\"></i>', '<i class=\"fa fa-angle-right\"></i>']
 		});
 
@@ -35,7 +35,6 @@ class JustTheTip {
 				output += '<div class="grid-x small-up-2 medium-up-4 large-up-6">';
 				data.forEach(function(value, index) {
 					output += '<div class="cell">';
-					//anchor tag here with foundation tooltip. background image with cover, zoom on hover
 					output += '<span class="instagram-tooltips" data-tooltip data-alignment="center" tabindex="1" title="' + value.caption.text + '">';
 					output += '<a class="instagram-image background-image-cover" href="' + value.link + '" style="background-image:url(' + value.images.standard_resolution.url + ');" target="_blank"></a>';
 					output += '</span>';
