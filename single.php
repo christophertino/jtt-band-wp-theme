@@ -33,6 +33,9 @@
 								<li><a href="https://twitter.com/share?text=<?php echo urlencode(get_the_title()); ?>&url=<?php the_permalink(); ?>&via=Just the Tip Band" title="Share on Twitter"><i class="fab fa-twitter"></i></a></li>
 							</ul>
 							<?php the_content(); ?>
+							<div class="blog-tags">
+								<?php the_tags('','',''); ?>
+							</div>
 						</article>
 						<div class="comment-wrap white-bg">
 							<?php comments_template(); ?>
