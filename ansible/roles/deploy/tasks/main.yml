@@ -1,0 +1,17 @@
+---
+
+- name: Stash changes to package-lock.json
+  command: git checkout -- package-lock.json
+  args:
+    chdir: '{{ project_path }}'
+
+- name: Pull latest changes from GitHub
+  git:
+    repo: "{{ git_repo }}"
+    dest: "{{ project_path }}"
+    update: yes
+
+- name: Build webpack bundles
+  command: npm run build.prod
+  args:
+    chdir: '{{ project_path }}'

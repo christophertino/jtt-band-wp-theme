@@ -1,0 +1,40 @@
+---
+
+- name: Clone the Git Repo
+  git:
+    repo: "{{ git_repo }}"
+    dest: "{{ project_path }}"
+    clone: yes
+    update: no
+    accept_hostkey: yes
+
+- name: Change ownership of {{ project_path }}
+  file:
+    path: "{{ project_path }}"
+    owner: "{{ web_user }}"
+    group: "{{ web_group }}"
+    state: directory
+    recurse: yes
+  become: true
+  become_method: sudo
+
+- name: Set {{ project_path }} directories to 0755
+  shell: find {{ project_path }} -type d -print0 | xargs -0 chmod -c 0755
+  register: chmod_result
+  changed_when: "chmod_result.stdout != \"\""
+
+- name: Set {{ project_path }} files to 0644
+  shell: find {{ project_path }} -type f -print0 | xargs -0 chmod -c 0644
+  register: chmod_result
+  changed_when: "chmod_result.stdout != \"\""
+
+# Using command instead of Ansible's npm module due to memory issues with Ansible
+- name: Install local NPM packages
+  command: /usr/bin/npm install --silent
+  args:
+    chdir: '{{ project_path }}'
+
+- name: Build webpack bundles
+  command: npm run build.prod
+  args:
+    chdir: '{{ project_path }}'

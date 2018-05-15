@@ -1,0 +1,31 @@
+---
+
+- name: Install Git
+  apt:
+    name: git
+    state: present
+
+- name: Check if NodeJS Repository is Installed
+  shell: apt-cache policy | grep "https://deb.nodesource.com/node_8.x"
+  register: node_repo_check
+  ignore_errors: true
+
+- name: Download NodeJS Repository Install File
+  get_url:
+    url: https://deb.nodesource.com/setup_8.x
+    dest: /tmp/nodejs
+    force: false
+    mode: 0744
+    checksum: md5:492c392212b55aac69e767fccba2b208
+
+- name: Install NodeJS Repository
+  command: ./nodejs
+  args:
+    chdir: /tmp
+  when: node_repo_check is failed
+
+- name: Install NodeJS
+  apt:
+    name: nodejs
+    update_cache: true
+    state: latest

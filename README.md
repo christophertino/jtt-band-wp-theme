@@ -37,6 +37,17 @@ $ npm run build.prod
 $ npm run watch
 ```
 
+### Ansible Deployment
+```sh
+# Configure web server
+$ ansible-playbook ansible/provision.yml
+```
+
+```sh
+# Deploy changes from GitHub
+$ ansible-playbook ansible/deploy.yml
+```
+
 ## License
 [MPL-2.0](https://www.mozilla.org/en-US/MPL/2.0/) Copyright 2018 Just the Tip Band. All rights reserved.
 

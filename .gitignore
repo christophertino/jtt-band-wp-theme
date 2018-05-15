@@ -1,11 +1,15 @@
 ## Build Files
 dist/
 
+## Ansible
+ansible/group_vars/justthetip.yml
+*.retry
+
 ## Node Modules
 node_modules
 npm-debug.log
 
-# OS Files
+## OS Files
 *~
 .DS_Store
 .svn
@@ -14,7 +18,7 @@ npm-debug.log
 *.swp
 Thumbs.db
 
-# large file types
+## Large File Types
 *.hqx
 *.bin
 *.exe
