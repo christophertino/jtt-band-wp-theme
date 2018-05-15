@@ -187,10 +187,6 @@ section.index-page {
 		.page-content {margin-top: rem-calc(20);}
 	}
 	section.weddings-template .weddings-hero .item, section.videos-template .video-hero .item-video {height: 400px;}
-	iframe {
-		max-width: 100%;
-		height: auto;
-	}
 }
 @include breakpoint(medium only) {
 	section.home-template .songlist {

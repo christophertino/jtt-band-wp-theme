@@ -17,17 +17,13 @@ class JustTheTip {
 		$('.homepage-hero').owlCarousel({
 			items: 1,
 			autoplay: true,
-			autoplayHoverPause: false,
+			autoplayHoverPause: true,
+			autoplayTimeout: 8000,
 			loop: true,
+			nav: false,
 			navText: ['<i class=\"fa fa-angle-left\"></i>', '<i class=\"fa fa-angle-right\"></i>'],
 			responsive: {
-				0: {
-					nav: false,
-				},
-				640: {
-					nav: false,
-				},
-				1024: {
+				1200: {
 					nav: true,
 				}
 			}
@@ -61,21 +57,18 @@ class JustTheTip {
 			items: 1,
 			loop: true,
 			video: true,
+			nav: false,
 			navText: ['<i class=\"fa fa-angle-left\"></i>', '<i class=\"fa fa-angle-right\"></i>'],
 			responsive: {
-				0: {
-					nav: false,
-				},
 				640: {
 					margin: 15,
-					nav: false,
 					stagePadding: 100,
 				},
-				1024: {
+				1200: {
 					margin: 30,
 					nav: true,
 					stagePadding: 200,
-				}
+				},
 			}
 		});
 	}
@@ -93,7 +86,7 @@ class JustTheTip {
 					margin: 15,
 					stagePadding: 100,
 				},
-				1024: {
+				1200: {
 					margin: 30,
 					stagePadding: 200,
 				}
