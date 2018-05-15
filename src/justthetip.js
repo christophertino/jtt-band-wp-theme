@@ -19,8 +19,18 @@ class JustTheTip {
 			autoplay: true,
 			autoplayHoverPause: false,
 			loop: true,
-			nav: true,
-			navText: ['<i class=\"fa fa-angle-left\"></i>', '<i class=\"fa fa-angle-right\"></i>']
+			navText: ['<i class=\"fa fa-angle-left\"></i>', '<i class=\"fa fa-angle-right\"></i>'],
+			responsive: {
+				0: {
+					nav: false,
+				},
+				640: {
+					nav: false,
+				},
+				1024: {
+					nav: true,
+				}
+			}
 		});
 
 		// fetch instagram feed
@@ -51,15 +61,19 @@ class JustTheTip {
 			items: 1,
 			loop: true,
 			video: true,
-			nav: true,
 			navText: ['<i class=\"fa fa-angle-left\"></i>', '<i class=\"fa fa-angle-right\"></i>'],
 			responsive: {
+				0: {
+					nav: false,
+				},
 				640: {
 					margin: 15,
+					nav: false,
 					stagePadding: 100,
 				},
 				1024: {
 					margin: 30,
+					nav: true,
 					stagePadding: 200,
 				}
 			}

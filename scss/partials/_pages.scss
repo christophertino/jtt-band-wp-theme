@@ -41,7 +41,6 @@ section.home-template {
 			&.background-image-cover {min-height: 600px;}
 			.grid-container {flex-grow: 1;}
 			h1 {
-				letter-spacing: -2px;
 				margin-bottom: rem-calc(15);
 				text-shadow: 1px 1px 1px $black;
 			}
@@ -173,6 +172,26 @@ section.index-page {
 }
 
 /* MEDIA QUERIES */
+@include breakpoint(small only) {
+	section.home-template {
+		.homepage-hero .slide.background-image-cover {
+			min-height: 400px;
+		}
+		.news .homepage-post-item {
+			margin-bottom: rem-calc(20);
+		}
+	}
+	section.index-page {
+		padding-top: 75px;
+		.page-header {margin-bottom: 0;}
+		.page-content {margin-top: rem-calc(20);}
+	}
+	section.weddings-template .weddings-hero .item, section.videos-template .video-hero .item-video {height: 400px;}
+	iframe {
+		max-width: 100%;
+		height: auto;
+	}
+}
 @include breakpoint(medium only) {
 	section.home-template .songlist {
 		.artist-columns {
@@ -191,6 +210,9 @@ section.index-page {
 		margin-top: rem-calc(50);
 	}
 	section.home-template .songlist {
+		.homepage-hero .slide h1 {
+			letter-spacing: -2px;
+		}
 		.artist-columns {
 			columns: 4 auto;
 		}

@@ -470,3 +470,13 @@
 		opacity: 1 !important;
 	}
 }
+
+/* MEDIA QUERIES */
+@include breakpoint(small only) {
+	.mejs-container .mejs-controls {
+		.mejs-currenttime-container, .mejs-duration-container {display: none;}
+		.mejs-horizontal-volume-slider {
+			margin-right: 0;
+		}
+	}
+}

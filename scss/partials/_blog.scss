@@ -271,3 +271,23 @@ form.search-form {
 		}
 	}
 }
+
+/* MEDIA QUERIES */
+@include breakpoint(small only) {
+	section.blog-template {
+		.blog-header {
+			padding-top: 75px;
+			h1 {margin-bottom: 0;}
+		}
+		 ul.blog-categories {margin: rem-calc(15 0);}
+		.blog-featured-posts .featured-post-large {
+			margin-bottom: rem-calc(30);
+		}
+	}
+	section.blog-single {
+		padding-top: 75px;
+	}
+	.white-bg {
+		padding: rem-calc(15 20);
+	}
+}
