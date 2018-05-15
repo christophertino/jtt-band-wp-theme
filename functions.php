@@ -291,6 +291,9 @@ if( function_exists('acf_add_options_page') ) {
 	));
 }
 
+// Add custom field groups
+// require_once('includes/custom-fields/field-groups.php');
+
 //Extend WordPress search to include custom fields
 function cf_search_join( $join ) {
 	global $wpdb;
