@@ -23,7 +23,7 @@ class JustTheTip {
 			nav: false,
 			navText: ['<i class=\"fa fa-angle-left\"></i>', '<i class=\"fa fa-angle-right\"></i>'],
 			responsive: {
-				1200: {
+				1275: { //allow space for hero text
 					nav: true,
 				}
 			}

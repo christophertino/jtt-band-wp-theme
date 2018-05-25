@@ -18,7 +18,7 @@ $color-gray:			$medium-gray;
 //nav
 $nav-color: 			$color-white;
 $nav-color-hover:		$color-base;
-$nav-font-size: 		65px;
+$nav-font-size: 		40px;
 $nav-rounded: 			0;
 $nav-margin: 			0 10px;
 $nav-padding: 			4px 7px;
@@ -49,10 +49,10 @@ $dot-background-active:	$color-base;
 			}
 		}
 		.owl-next {
-			right: 20px;
+			right: 0px;
 		}
 		.owl-prev {
-			left: 20px;
+			left: 0px;
 		}
 	}
 	.owl-dots {
@@ -62,5 +62,25 @@ $dot-background-active:	$color-base;
 		margin: 0 auto;
 		right: 0;
 		width: 250px;
+		.owl-dot span {box-shadow: 1px 1px 1px $black;}
+	}
+}
+
+/* MEDIA QUERIES */
+@include breakpoint(xlarge) {
+	.owl-carousel.owl-theme .owl-nav {
+		[class*='owl-'] i.fa {
+			font-size: 65px;
+		}
+	}
+}
+@include breakpoint(xxlarge) {
+	.owl-carousel.owl-theme .owl-nav {
+		.owl-next {
+			right: 20px;
+		}
+		.owl-prev {
+			left: 20px;
+		}
 	}
 }
