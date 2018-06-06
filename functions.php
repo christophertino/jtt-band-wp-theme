@@ -18,7 +18,7 @@ add_image_size( 'hero_small', 640, 300, true ); // small hero images
 add_image_size( 'blog_thumbnail', 760, 540, true ); // blog post thumbnails
 
 //Show custom image sizes on WP image embed page
-function my_insert_custom_image_sizes( $sizes ) {
+function insert_custom_image_sizes( $sizes ) {
 	global $_wp_additional_image_sizes;
 	if ( empty($_wp_additional_image_sizes) )
 		return $sizes;
@@ -30,7 +30,7 @@ function my_insert_custom_image_sizes( $sizes ) {
 
 	return $sizes;
 }
-add_filter( 'image_size_names_choose', 'my_insert_custom_image_sizes' );
+add_filter( 'image_size_names_choose', 'insert_custom_image_sizes' );
 
 /******************** JAVASCRIPT LOADER *********************/
 // Get rid of unused WP defaults, including a legacy jQuery v1

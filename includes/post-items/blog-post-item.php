@@ -11,12 +11,29 @@
 ?>
 
 <div class="blog-post-item">
-	<?php if (has_post_thumbnail()) :
-		$image = wp_get_attachment_image_src(get_post_thumbnail_id(), 'blog_thumbnail'); ?>
-		<a class="content-image background-image-cover" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" style="background-image: url(<?php echo $image[0]; ?>)"></a>
-	<?php else : ?>
-		<a class="content-image background-image-cover" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" style="background-image: url(<?php bloginfo('template_url'); ?>/images/jtt-logo-gray.jpg)"></a>
-	<?php endif; ?>
+	<?php // default fallback image
+	$output[0] = get_bloginfo('template_url') . '/images/jtt-logo-gray.jpg';
+
+	if (has_post_thumbnail()) :
+		// featured image
+		$output = wp_get_attachment_image_src(get_post_thumbnail_id(), 'blog_thumbnail');
+	else :
+		// check for images embeded in the post
+		$post_images = get_children(array(
+			'numberposts' => 1,
+			'order' => 'ASC',
+			'post_mime_type' => 'image',
+			'post_parent' => get_the_ID(),
+			'post_type' => 'attachment'
+		));
+		if ($post_images) :
+			foreach ($post_images as $image) :
+				$output = wp_get_attachment_image_src($image->ID, 'blog_thumbnail');
+			endforeach;
+		endif;
+	endif; ?>
+
+	<a class="content-image background-image-cover" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" style="background-image: url(<?php echo $output[0]; ?>)"></a>
 	<div class="content-inner" data-equalizer-watch>
 		<?php $categories = get_the_category();
 		if (!empty($categories)) : ?>

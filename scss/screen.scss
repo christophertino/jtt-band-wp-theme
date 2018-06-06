@@ -228,7 +228,10 @@ ul.social-menu {
 	}
 }
 
-@include breakpoint(medium down) {}
+@include breakpoint(medium down) {
+	html.is-reveal-open .title-bar {display: none;}
+	#mobile-modal.full {top: 0 !important;}
+}
 
 @include breakpoint(medium only) {}
 
