@@ -18,28 +18,28 @@ Follow these steps to build theme distribution files
 ### Installation
 ```sh
 # Install local npm packages
-$ npm install
+$ yarn install
 ```
 
 ### Building
 ```sh
 # Build all sources
-$ npm run build
+$ yarn build
 ```
 
 ```sh
 # Build for production
-$ npm run build.prod
+$ yarn build.prod
 ```
 
 ```sh
 # Build and watch for changes
-$ npm run watch
+$ yarn watch
 ```
 
 ### Ansible Deployment
 ```sh
-# Configure web server
+# Install the JTT Theme
 $ ansible-playbook ansible/provision.yml
 ```
 
@@ -49,6 +49,6 @@ $ ansible-playbook ansible/deploy.yml
 ```
 
 ## License
-[MPL-2.0](https://www.mozilla.org/en-US/MPL/2.0/) Copyright 2018 Just the Tip Band. All rights reserved.
+[MPL-2.0](https://www.mozilla.org/en-US/MPL/2.0/) Copyright 2020 Just the Tip Band. All rights reserved.
 
 See [LICENSE](LICENSE)

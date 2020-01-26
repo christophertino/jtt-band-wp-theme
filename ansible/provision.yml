@@ -1,21 +1,21 @@
 ---
 
-- name: Provision JTT Servers
-  hosts: justthetip
+- name: Install JTT Band Theme
+  hosts: jtt_server
   become: true
   become_method: sudo
   gather_facts: no
   pre_tasks:
   - name: Install Python
-    raw: test -e /usr/bin/python || (sudo apt -y update && sudo apt install -y python-minimal && sudo apt install -y python-apt)
+    raw: test -e /usr/bin/python || (yum -y update && yum install -y python) || (apt -y update && apt install -y python-minimal python-apt)
     register: output
     changed_when: output.stdout != ""
   roles:
-    - provision
+    - theme
 
 # Use second play here to avoid unnecessary privilege escalation
 - name: Clone Repo from GitHub
-  hosts: justthetip
+  hosts: jtt_server
   gather_facts: yes
   roles:
     - clone
