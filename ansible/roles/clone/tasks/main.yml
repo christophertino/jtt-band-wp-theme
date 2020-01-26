@@ -28,13 +28,16 @@
   register: chmod_result
   changed_when: "chmod_result.stdout != \"\""
 
-# Using command instead of Ansible's npm module due to memory issues with Ansible
-- name: Install local NPM packages
-  command: /usr/bin/npm install --silent
+- name: Set Node version
+  command: nvm use
   args:
     chdir: '{{ project_path }}'
 
+- name: Install local NPM packages
+  yarn:
+    path: '{{ project_path }}'
+
 - name: Build webpack bundles
-  command: npm run build.prod
+  command: yarn build.prod
   args:
     chdir: '{{ project_path }}'

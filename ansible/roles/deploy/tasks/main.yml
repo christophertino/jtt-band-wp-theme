@@ -1,7 +1,7 @@
 ---
 
-- name: Stash changes to package-lock.json
-  command: git checkout -- package-lock.json
+- name: Stash changes to yarn.lock
+  command: git checkout -- yarn.lock
   args:
     chdir: '{{ project_path }}'
 
@@ -11,7 +11,12 @@
     dest: "{{ project_path }}"
     update: yes
 
+- name: Set Node version
+  command: nvm use
+  args:
+    chdir: '{{ project_path }}'
+
 - name: Build webpack bundles
-  command: npm run build.prod
+  command: yarn build.prod
   args:
     chdir: '{{ project_path }}'

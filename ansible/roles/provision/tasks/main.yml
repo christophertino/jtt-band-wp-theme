@@ -5,27 +5,23 @@
     name: git
     state: present
 
-- name: Check if NodeJS Repository is Installed
-  shell: apt-cache policy | grep "https://deb.nodesource.com/node_8.x"
-  register: node_repo_check
-  ignore_errors: true
-
-- name: Download NodeJS Repository Install File
-  get_url:
-    url: https://deb.nodesource.com/setup_8.x
-    dest: /tmp/nodejs
-    force: false
-    mode: 0744
-    checksum: md5:492c392212b55aac69e767fccba2b208
-
-- name: Install NodeJS Repository
-  command: ./nodejs
+- name: Install NVM
+  shell: >
+    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.2/install.sh | bash
   args:
-    chdir: /tmp
-  when: node_repo_check is failed
+    creates: "{{ ansible_env.HOME }}/.nvm/nvm.sh"
 
-- name: Install NodeJS
+- name: Install Node from NVM
+  shell: nvm install
+
+- name: Add Yarn APT key
+  apt_key:
+    url: https://dl.yarnpkg.com/debian/pubkey.gpg
+
+- name: Add Yarn repository
+  apt_repository:
+    repo: "deb https://dl.yarnpkg.com/debian/ stable main"
+
+- name: Install Yarn
   apt:
-    name: nodejs
-    update_cache: true
-    state: latest
+    name: yarn
