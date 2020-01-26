@@ -1,7 +1,7 @@
 ---
 
 - name: Install JTT Band Theme
-  hosts: jtt_server
+  hosts: justthetip
   become: true
   become_method: sudo
   gather_facts: no
@@ -11,11 +11,11 @@
     register: output
     changed_when: output.stdout != ""
   roles:
-    - theme
+    - provision
 
 # Use second play here to avoid unnecessary privilege escalation
 - name: Clone Repo from GitHub
-  hosts: jtt_server
+  hosts: justthetip
   gather_facts: yes
   roles:
     - clone

@@ -1,7 +1,7 @@
 ---
 
 - name: Deploy the latest code from GitHub
-  hosts: jtt_server
+  hosts: justthetip
   gather_facts: yes
   roles:
     - deploy
