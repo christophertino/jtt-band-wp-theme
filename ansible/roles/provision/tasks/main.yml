@@ -7,9 +7,9 @@
 
 - name: Install NVM
   shell: >
-    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.2/install.sh | bash
+    wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.2/install.sh | bash
   args:
-    creates: "{{ ansible_env.HOME }}/.nvm/nvm.sh"
+    creates: "~/.nvm/nvm.sh"
 
 - name: Install Node from NVM
   shell: nvm install
