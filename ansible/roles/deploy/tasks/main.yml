@@ -1,10 +1,5 @@
 ---
 
-- name: Stash changes to yarn.lock
-  command: git checkout -- yarn.lock
-  args:
-    chdir: '{{ project_path }}'
-
 - name: Pull latest changes from GitHub
   git:
     repo: "{{ git_repo }}"
