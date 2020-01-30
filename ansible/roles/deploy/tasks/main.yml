@@ -6,12 +6,7 @@
     dest: "{{ project_path }}"
     update: yes
 
-- name: Set Node version
-  command: nvm use
-  args:
-    chdir: '{{ project_path }}'
-
-- name: Build webpack bundles
-  command: yarn build.prod
+- name: Set Node version with nvm | Update dependencies | Build webpack bundles
+  shell: . /root/.nvm/nvm.sh use && yarn && yarn build.prod
   args:
     chdir: '{{ project_path }}'

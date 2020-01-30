@@ -28,16 +28,7 @@
   register: chmod_result
   changed_when: "chmod_result.stdout != \"\""
 
-- name: Set Node version
-  command: nvm use
-  args:
-    chdir: '{{ project_path }}'
-
-- name: Install local NPM packages
-  yarn:
-    path: '{{ project_path }}'
-
-- name: Build webpack bundles
-  command: yarn build.prod
+- name: Set Node version with nvm | Update dependencies | Build webpack bundles
+  shell: . /root/.nvm/nvm.sh use && yarn && yarn build.prod
   args:
     chdir: '{{ project_path }}'

@@ -11,8 +11,8 @@
   args:
     creates: "~/.nvm/nvm.sh"
 
-- name: Install Node from NVM
-  shell: nvm install
+- name: Install Node from nvm
+  shell: . /root/.nvm/nvm.sh && nvm install lts/dubnium
 
 - name: Add Yarn APT key
   apt_key:
