@@ -2,7 +2,7 @@
 dist/
 
 ## Ansible
-ansible/group_vars/justthetip.yml
+ansible/
 *.retry
 
 ## Node Modules

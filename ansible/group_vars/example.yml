@@ -1,9 +1,0 @@
----
-
-# Rename this file to match the name of your Ansible deploy group
-
-ansible_ssh_user:
-git_repo:
-project_path:
-web_user:
-web_group:
